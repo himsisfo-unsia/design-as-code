@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base Template — IG Feed 4:5 (1080×1350) · HIMSISFO UNSIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kaushan+Script&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/studio.css" />
+</head>
+<body>
+
+  <nav class="toolbar">
+    <div class="tb-left">
+      <a class="tb-back" href="../../index.html">← Kembali ke Hub</a>
+      <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+      <div class="tb-title">
+        <h1>Base Template · Instagram Feed <span class="tb-badge">4:5 · 1080×1350 px</span></h1>
+        <p>Salin folder ini ke <code>projects/nama-kegiatan/</code> untuk memulai desain baru.</p>
+      </div>
+    </div>
+    <div class="tb-actions">
+      <div class="ctrl">
+        <span>Zoom</span>
+        <select id="zoom">
+          <option value=".35">35%</option>
+          <option value=".42" selected>42%</option>
+          <option value=".6">60%</option>
+          <option value="1">100%</option>
+        </select>
+      </div>
+      <div class="ctrl">
+        <span>Kualitas</span>
+        <select id="ratio">
+          <option value="1">1080 × 1350 (1x)</option>
+          <option value="2">2160 × 2700 (2x HD)</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <main class="studio">
+    <div class="grid">
+      <div class="item" data-id="template-ig-4x5">
+        <div class="item-bar">
+          <div class="item-meta">
+            <span class="item-tag">STARTER 4:5</span>
+            <span class="item-name">template-ig-4x5.png</span>
+          </div>
+          <div class="item-actions">
+            <button class="btn primary" data-dl>⬇ Download PNG</button>
+          </div>
+        </div>
+
+        <div class="frame" style="--w:1080px;--h:1350px;--s:.42">
+          <article class="poster" id="template-ig-4x5" data-w="1080" data-h="1350">
+            <div class="side-swoosh-l"></div>
+            <div class="side-swoosh-r"></div>
+
+            <header class="header" data-tpl="header"></header>
+
+            <!-- Hero Title -->
+            <div style="position:absolute;left:56px;right:56px;top:175px;z-index:6">
+              <div style="display:inline-block;padding:10px 26px;border-radius:999px;background:var(--grad-pill);color:#fff;font:700 22px var(--f-head)">
+                Kategori Kegiatan HIMSISFO
+              </div>
+              <h2 style="margin-top:20px;font:900 72px/1.05 var(--f-head);color:var(--navy);letter-spacing:-1.5px">
+                JUDUL UTAMA<br/>KEGIATAN DI SINI
+              </h2>
+              <p style="margin-top:18px;font-size:22px;line-height:1.55;color:var(--sub);max-width:780px">
+                Tuliskan deskripsi singkat atau sapaan pembuka untuk mahasiswa Sistem Informasi Universitas Siber Asia di area ini.
+              </p>
+            </div>
+
+            <!-- Content Card -->
+            <div class="card" style="left:56px;right:56px;top:585px;padding:54px 38px 34px">
+              <div class="chip">
+                <span class="ic" data-icon="calendar"></span>
+                <span class="label">Informasi Kegiatan</span>
+              </div>
+              <p style="font-size:21px;line-height:1.65;color:var(--ink)">
+                Gunakan komponen <code>.card</code> dan <code>.chip</code> ini untuk menampilkan detail acara, pemateri, jadwal pelaksanaan, atau ketentuan pendaftaran.
+              </p>
+            </div>
+
+            <!-- CTA Box -->
+            <div style="position:absolute;left:56px;right:56px;top:940px;height:230px;border-radius:26px;background:var(--navy);color:#fff;padding:34px 40px;display:flex;align-items:center;justify-content:space-between;z-index:6;box-shadow:0 16px 36px rgba(11,31,58,.25)">
+              <div>
+                <h3 style="font:800 36px var(--f-head)">Daftar Sekarang!</h3>
+                <p style="margin-top:8px;font-size:19px;color:#CBD5E1">Tambahkan link pendaftaran atau QR code pada bagian ini.</p>
+                <div style="margin-top:18px;display:inline-block;padding:12px 24px;border-radius:999px;background:#fff;color:var(--navy);font:700 19px var(--f-head)">
+                  himsisfo.unsia.ac.id
+                </div>
+              </div>
+            </div>
+
+            <footer class="wave-footer" data-tpl="footer"></footer>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script src="../shared/studio.js"></script>
+</body>
+</html>

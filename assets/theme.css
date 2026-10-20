@@ -1,0 +1,33 @@
+/* =========================================================
+   HIMSISFO UNSIA 2026/2027 — Global Brand Tokens (theme.css)
+   Sumber: assets/konsep-tema-hima-2026-2027.pdf
+   ========================================================= */
+:root {
+  /* Palet Utama */
+  --cyan: #06B6D4;
+  --cyan-l: #22D3EE;
+  --violet: #A855F7;
+  --violet-l: #C084FC;
+  --mint: #2DD4BF;
+  --mint-l: #5EEAD4;
+  --lime: #A3E635;
+  --navy: #0B1F3A;
+  --navy-2: #1E3A5F;
+  --ice: #F8FAFC;
+  --ink: #0F172A;
+  --sub: #475569;
+  --sub-d: #CBD5E1;
+  --divider: #E2E8F0;
+
+  /* Gradien Standar */
+  --grad-pill: linear-gradient(90deg, #06B6D4 0%, #3B82F6 48%, #A855F7 100%);
+  --grad-chip: linear-gradient(90deg, #0C2348 0%, #2563EB 45%, #A855F7 100%);
+  --grad-ic: linear-gradient(135deg, #22D3EE 0%, #06B6D4 55%, #0284C7 100%);
+  --grad-bi: linear-gradient(90deg, #10B981 0%, #14B8A6 45%, #06B6D4 100%);
+  --grad-num: linear-gradient(135deg, #06B6D4 0%, #2563EB 50%, #7C3AED 100%);
+
+  /* Tipografi */
+  --f-head: "Plus Jakarta Sans", "Montserrat", system-ui, sans-serif;
+  --f-body: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --f-script: "Kaushan Script", cursive;
+}

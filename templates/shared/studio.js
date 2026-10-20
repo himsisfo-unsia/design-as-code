@@ -1,5 +1,5 @@
 /* =========================================================
-   HIMSISFO Poster — Template, Ikon, Studio Filter & Export
+   HIMSISFO Shared Studio Script (templates/shared/studio.js)
    ========================================================= */
 
 const ICONS = {
@@ -21,11 +21,10 @@ document.querySelectorAll('[data-icon]').forEach((el) => {
     : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
 });
 
-/* ---------- Template Header & Layered Wave Footer ---------- */
 const HEADER = `
   <div class="brand">
-    <img class="logo-hima" src="../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
-    <img class="logo-univ" src="../assets/logo-universitas.jpg" alt="Logo Universitas Siber Asia" />
+    <img class="logo-hima" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+    <img class="logo-univ" src="../../assets/logo-universitas.jpg" alt="Logo Universitas Siber Asia" />
     <span class="vr"></span>
     <div class="brand-text"><b>HIMSISFO</b><span>Himpunan Mahasiswa Sistem Informasi</span></div>
   </div>
@@ -56,106 +55,51 @@ const FOOTER = `
 document.querySelectorAll('[data-tpl="header"]').forEach((el) => (el.innerHTML = HEADER));
 document.querySelectorAll('[data-tpl="footer"]').forEach((el) => (el.innerHTML = FOOTER));
 
-/* ---------- Mode Render Tunggal (?only=<id>) ---------- */
-const only = new URLSearchParams(location.search).get('only');
-if (only) {
-  document.body.classList.add('only');
-  document.querySelector(`.item[data-id="${only}"]`)?.classList.add('target');
-}
-
-/* ---------- Studio Filter Tabs ---------- */
-document.querySelectorAll('.tab').forEach((tab) => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    document.querySelectorAll('.group').forEach((g) => {
-      g.classList.toggle('hidden', filter !== 'all' && g.dataset.group !== filter);
-    });
-  });
-});
-
-/* ---------- Zoom Preview ---------- */
 const zoomSel = document.getElementById('zoom');
 zoomSel?.addEventListener('change', () => {
   document.querySelectorAll('.frame').forEach((f) => f.style.setProperty('--s', zoomSel.value));
 });
 
-/* ---------- Toast & Export ---------- */
 const toast = (msg) => {
   const t = document.getElementById('toast');
+  if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(t._h);
   t._h = setTimeout(() => t.classList.remove('show'), 2800);
 };
 
-async function renderBlob(id) {
+async function exportPoster(node, filename) {
   if (location.protocol === 'file:') {
-    const res = await fetch(`export/${id}.png`);
-    return res.blob();
+    toast('Buka lewat local server (`npx serve .`) atau GitHub Pages untuk me-render template menjadi PNG.');
+    return;
   }
   await document.fonts.ready;
-  const node = document.getElementById(id);
-  const ratio = Number(document.getElementById('ratio').value) || 1;
+  const w = Number(node.dataset.w) || 1080;
+  const h = Number(node.dataset.h) || 1350;
+  const ratio = Number(document.getElementById('ratio')?.value) || 1;
   const opts = {
-    width: 1080, height: 1350,
+    width: w, height: h,
     pixelRatio: ratio,
     cacheBust: true,
     style: { transform: 'none', margin: '0' },
   };
+  toast(`Membuat ${filename}…`);
   await htmlToImage.toPng(node, opts);
-  return htmlToImage.toBlob(node, opts);
-}
-
-async function downloadSlide(id) {
-  if (location.protocol === 'file:') {
-    const a = document.createElement('a');
-    a.href = `export/${id}.png`;
-    a.download = `${id}.png`;
-    a.click();
-    return;
-  }
-  const blob = await renderBlob(id);
+  const blob = await htmlToImage.toBlob(node, opts);
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `${id}.png`;
+  a.download = filename;
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  toast(`✔ ${filename} berhasil diunduh!`);
 }
 
 document.querySelectorAll('.item').forEach((item) => {
   const id = item.dataset.id;
-  item.querySelector('[data-dl]')?.addEventListener('click', async (e) => {
-    if (location.protocol === 'file:') {
-      toast(`✔ Mengunduh export/${id}.png`);
-      return; // biarkan <a download> bekerja langsung di file://
-    }
+  const poster = document.getElementById(id);
+  item.querySelector('[data-dl]')?.addEventListener('click', (e) => {
     e.preventDefault();
-    try {
-      toast(`Membuat ${id}.png…`);
-      await downloadSlide(id);
-      toast(`✔ ${id}.png berhasil diunduh`);
-    } catch (err) {
-      toast(err.message);
-    }
+    exportPoster(poster, `${id}.png`);
   });
-
-  item.querySelector('[data-copy]')?.addEventListener('click', async () => {
-    try {
-      toast('Menyalin gambar ke clipboard…');
-      const blob = await renderBlob(id);
-      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-      toast('✔ Gambar tersalin ke clipboard!');
-    } catch (err) {
-      toast('Buka via local server / GitHub Pages untuk fitur Copy gambar langsung.');
-    }
-  });
-});
-
-document.getElementById('dl-all')?.addEventListener('click', async () => {
-  for (const item of document.querySelectorAll('.item')) {
-    await downloadSlide(item.dataset.id);
-  }
-  toast('✔ Semua PNG berhasil diunduh!');
 });

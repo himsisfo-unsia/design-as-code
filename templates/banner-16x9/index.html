@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base Template — Banner 16:9 (1920×1080) · HIMSISFO UNSIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kaushan+Script&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared/studio.css" />
+</head>
+<body>
+
+  <nav class="toolbar">
+    <div class="tb-left">
+      <a class="tb-back" href="../../index.html">← Kembali ke Hub</a>
+      <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+      <div class="tb-title">
+        <h1>Base Template · Landscape Banner <span class="tb-badge">16:9 · 1920×1080 px</span></h1>
+        <p>Cocok untuk spanduk acara, Virtual Background Zoom, atau header YouTube/LinkedIn.</p>
+      </div>
+    </div>
+    <div class="tb-actions">
+      <div class="ctrl">
+        <span>Zoom</span>
+        <select id="zoom">
+          <option value=".35">35%</option>
+          <option value=".45" selected>45%</option>
+          <option value=".6">60%</option>
+          <option value="1">100%</option>
+        </select>
+      </div>
+      <div class="ctrl">
+        <span>Kualitas</span>
+        <select id="ratio">
+          <option value="1">1920 × 1080 (Full HD)</option>
+          <option value="2">3840 × 2160 (4K UHD)</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <main class="studio">
+    <div class="grid">
+      <div class="item" data-id="template-banner-16x9">
+        <div class="item-bar">
+          <div class="item-meta">
+            <span class="item-tag">STARTER 16:9</span>
+            <span class="item-name">template-banner-16x9.png</span>
+          </div>
+          <div class="item-actions">
+            <button class="btn primary" data-dl>⬇ Download PNG</button>
+          </div>
+        </div>
+
+        <div class="frame" style="--w:1920px;--h:1080px;--s:.45">
+          <article class="poster" id="template-banner-16x9" data-w="1920" data-h="1080">
+            <div class="side-swoosh-l" style="bottom:120px"></div>
+            <div class="side-swoosh-r" style="top:160px"></div>
+
+            <header class="header" data-tpl="header" style="top:44px;left:72px;right:72px"></header>
+
+            <div style="position:absolute;left:72px;top:220px;width:1040px;z-index:6">
+              <div style="display:inline-block;padding:12px 34px;border-radius:999px;background:var(--grad-pill);color:#fff;font:400 42px var(--f-script);transform:rotate(-2deg)">
+                Program Kerja HIMSISFO UNSIA
+              </div>
+              <h2 style="margin-top:24px;font:900 86px/1.02 var(--f-head);color:var(--navy);letter-spacing:-2px">
+                JUDUL BANNER /<br/>WEBINAR 16:9
+              </h2>
+              <p style="margin-top:22px;font-size:24px;line-height:1.55;color:var(--sub);max-width:900px">
+                Kanvas ukuran 1920 × 1080 px siap pakai untuk spanduk digital, backdrop acara, maupun cover slide presentasi HIMSISFO.
+              </p>
+            </div>
+
+            <div class="card" style="right:72px;top:240px;width:640px;padding:54px 40px 38px">
+              <div class="chip">
+                <span class="ic" data-icon="calendar"></span>
+                <span class="label">Waktu &amp; Tempat</span>
+              </div>
+              <p style="font-size:22px;line-height:1.6;color:var(--ink)">
+                Tempatkan foto pemateri, informasi jadwal, atau QR code registrasi di kartu sebelah kanan ini.
+              </p>
+            </div>
+
+            <footer class="wave-footer" data-tpl="footer"></footer>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script src="../shared/studio.js"></script>
+</body>
+</html>
