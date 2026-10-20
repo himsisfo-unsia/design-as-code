@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIMSISFO UNSIA — Kunjungan Edukatif ke Bank Indonesia (IG 4:5)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kaushan+Script&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ================= STUDIO TOOLBAR (Tidak ikut diexport) ================= -->
+  <nav class="toolbar">
+    <div class="tb-left">
+      <img class="tb-logo" src="../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+      <div class="tb-title">
+        <h1>Kunjungan Edukatif ke Bank Indonesia <span class="tb-badge">IG 4:5 · 1080×1350</span></h1>
+        <p>HIMSISFO UNSIA 2026/2027 · Program BINGO (Bank Indonesia Ngobrol dengan Komunitas)</p>
+      </div>
+    </div>
+
+    <div class="tb-tabs">
+      <button class="tab active" data-filter="all">Semua Desain (4)</button>
+      <button class="tab" data-filter="single">Opsi A · Single Post</button>
+      <button class="tab" data-filter="carousel">Opsi B · Carousel (3 Slide)</button>
+    </div>
+
+    <div class="tb-actions">
+      <div class="ctrl">
+        <span>Zoom</span>
+        <select id="zoom">
+          <option value=".34">34%</option>
+          <option value=".42" selected>42%</option>
+          <option value=".55">55%</option>
+          <option value=".75">75%</option>
+          <option value="1">100%</option>
+        </select>
+      </div>
+      <div class="ctrl">
+        <span>Kualitas</span>
+        <select id="ratio">
+          <option value="1">1080 × 1350 (Standar IG)</option>
+          <option value="2">2160 × 2700 (Ultra HD)</option>
+        </select>
+      </div>
+      <button class="btn primary" id="dl-all">⬇ Download Semua PNG</button>
+    </div>
+  </nav>
+
+  <main class="studio">
+
+    <!-- ================= OPSI A — SINGLE POST (4:5) ================= -->
+    <section class="group" data-group="single">
+      <div class="group-head">
+        <h2>Opsi A — Single Post <span>1 Gambar Utuh</span></h2>
+        <p>Seluruh informasi dalam satu kanvas 1080 × 1350 px persis seperti komposisi poster referensi.</p>
+      </div>
+
+      <div class="grid">
+        <div class="item" data-id="poster-single">
+          <div class="item-bar">
+            <div class="item-meta">
+              <span class="item-tag">4:5 SINGLE</span>
+              <span class="item-name">poster-single.png</span>
+            </div>
+            <div class="item-actions">
+              <button class="btn" data-copy>📋 Copy</button>
+              <a class="btn primary" href="export/poster-single.png" download="poster-single.png" data-dl>⬇ Download PNG</a>
+            </div>
+          </div>
+
+          <div class="frame">
+            <!-- ===================== POSTER SINGLE (1080 x 1350) ===================== -->
+            <article class="poster" id="poster-single">
+              <div class="side-swoosh-l"></div>
+              <div class="side-swoosh-r"></div>
+              <div class="dots" style="left:26px;top:372px;width:64px;height:48px"></div>
+              <div class="dots" style="right:28px;bottom:146px;width:64px;height:48px"></div>
+
+              <header class="header" data-tpl="header"></header>
+
+              <!-- Visual Gedung BI + Ribbon Waves -->
+              <div class="bi-visual" style="left:480px;top:110px;width:600px;height:445px">
+                <svg class="bi-back-wave" viewBox="0 0 600 445" fill="none">
+                  <path d="M90 350 C150 220, 260 190, 400 60 L600 60 L600 430 L50 430 Z" fill="url(#biBgGrad1)" opacity="0.55"/>
+                  <defs>
+                    <linearGradient id="biBgGrad1" x1="60" y1="420" x2="560" y2="80" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#2DD4BF"/>
+                      <stop offset="50%" stop-color="#06B6D4"/>
+                      <stop offset="100%" stop-color="#3B82F6"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="bi-photo-mask">
+                  <img src="assets/Bank-Indonesia-Banner-Photo.jpg" alt="Gedung Bank Indonesia" />
+                </div>
+                <svg class="bi-front-wave" style="left:10px;bottom:-18px;width:380px;height:190px" viewBox="0 0 420 220" fill="none">
+                  <path d="M10 185 C85 95, 190 95, 340 190 C235 215, 105 220, 10 185 Z" fill="url(#biWaveFront)" opacity="0.9"/>
+                  <defs>
+                    <linearGradient id="biWaveFront" x1="0" y1="100" x2="360" y2="200" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#22D3EE"/>
+                      <stop offset="55%" stop-color="#0284C7"/>
+                      <stop offset="100%" stop-color="#1E3A8A"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <!-- Sparkles di sekitar gedung BI -->
+              <span class="spark" style="left:510px;top:375px;width:30px;height:30px" data-icon="spark"></span>
+              <span class="spark w" style="left:488px;top:405px;width:22px;height:22px" data-icon="spark"></span>
+              <span class="spark" style="right:68px;top:276px;width:34px;height:34px" data-icon="spark"></span>
+
+              <!-- Kutipan miring di kanan atas -->
+              <div class="bi-quote" style="right:44px;top:132px;width:255px">
+                Mengenal<br/>Lebih Dekat<br/>Peran Bank Indonesia<br/>dalam Perekonomian<br/>Indonesia
+              </div>
+
+              <!-- Judul Utama Miring (Kiri Atas) -->
+              <div class="hero-title" style="left:52px;top:138px;width:540px">
+                <div class="t-top">
+                  <span class="rays-l"><i></i><i></i><i></i></span>
+                  HIMSISFO
+                  <span class="rays-r"><i></i><i></i></span>
+                </div>
+                <div class="t-pill">Kunjungan Edukatif ke</div>
+                <div class="t-bank">BANK INDONESIA</div>
+                <div class="t-bi">(BI)</div>
+              </div>
+
+              <!-- Sapaan -->
+              <div class="greet" style="left:52px;top:416px;width:438px">
+                <h3>Halo, Mahasiswa<br/>Sistem Informasi UNSIA! <span class="wave">👋</span></h3>
+                <p>HIMSISFO membuka pendaftaran bagi mahasiswa Program Studi Sistem Informasi yang ingin mengikuti kegiatan kunjungan edukatif ke Bank Indonesia (BI) melalui program <b>BINGO (Bank Indonesia Ngobrol dengan Komunitas)</b>.</p>
+              </div>
+
+              <!-- Card 1: Tentang Program BINGO -->
+              <div class="card" style="left:52px;top:624px;width:480px;padding:38px 24px 18px">
+                <div class="chip">
+                  <span class="ic" data-icon="book"></span>
+                  <span class="label">Tentang Program BINGO</span>
+                </div>
+                <p>BINGO merupakan program edukasi Bank Indonesia yang bertujuan meningkatkan pemahaman masyarakat mengenai tugas, peran, fungsi, serta kebijakan Bank Indonesia. Program ini menjadi sarana bagi berbagai kalangan, termasuk mahasiswa, untuk mengenal lebih dekat peran Bank Indonesia dalam menjaga stabilitas perekonomian Indonesia.</p>
+              </div>
+
+              <!-- Card 2: Informasi Kegiatan (Kanan Tengah) -->
+              <div class="card" style="left:568px;top:514px;width:460px;padding:38px 22px 10px">
+                <div class="chip center">
+                  <span class="ic" data-icon="calendar"></span>
+                  <span class="label">Informasi Kegiatan</span>
+                </div>
+                <div class="info-row"><span class="info-ic" data-icon="users"></span><span class="k">Penyelenggara</span><span class="sep">:</span><span class="v">HIMSISFO</span></div>
+                <div class="info-row"><span class="info-ic" data-icon="cap"></span><span class="k">Peserta</span><span class="sep">:</span><span class="v">Mahasiswa Program Studi Sistem Informasi UNSIA</span></div>
+                <div class="info-row"><span class="info-ic" data-icon="calendar"></span><span class="k">Tanggal</span><span class="sep">:</span><span class="v"><b>05 November 2026</b></span></div>
+                <div class="info-row"><span class="info-ic" data-icon="clock"></span><span class="k">Waktu</span><span class="sep">:</span><span class="v"><b>07.30 – 11.30 WIB</b></span></div>
+                <div class="info-row"><span class="info-ic" data-icon="users"></span><span class="k">Kuota peserta</span><span class="sep">:</span><span class="v">Terbatas, maksimal 50 orang termasuk dosen.</span></div>
+              </div>
+
+              <!-- Card 3: Ketentuan Pendaftaran (Kiri Bawah) -->
+              <div class="card" style="left:52px;top:876px;width:480px;padding:36px 22px 16px">
+                <div class="chip">
+                  <span class="ic" data-icon="clipboard"></span>
+                  <span class="label">Ketentuan Pendaftaran</span>
+                </div>
+                <ol class="rules">
+                  <li><span class="n">1</span><p>Pendaftaran dibuka khusus bagi mahasiswa Program Studi Sistem Informasi UNSIA.</p></li>
+                  <li><span class="n">2</span><p>Setiap peserta wajib mengisi formulir dengan data yang benar dan lengkap.</p></li>
+                  <li><span class="n">3</span><p>Peserta wajib memiliki komitmen untuk hadir dan mengikuti rangkaian kegiatan sesuai jadwal yang ditentukan.</p></li>
+                  <li><span class="n">4</span><p>Mengingat kuota peserta terbatas, pendaftaran akan disesuaikan dengan ketersediaan kuota.</p></li>
+                </ol>
+              </div>
+
+              <!-- Banner Miring + Teks Penutup (Kanan Bawah) -->
+              <div class="brush-wrap" style="left:600px;top:856px;width:390px">
+                <div class="brush-banner">
+                  Jangan lewatkan<br/>kesempatan ini!
+                  <span class="brush-rays"><i></i><i></i><i></i></span>
+                </div>
+              </div>
+
+              <div class="closing-note" style="left:572px;top:976px;width:454px">
+                <p>Pastikan kamu telah mempertimbangkan jadwal dan kesiapan untuk mengikuti kegiatan sebelum melakukan pendaftaran.</p>
+                <p>Mari ikut serta dalam kegiatan kunjungan edukatif ini bersama <b>HIMSISFO!</b> 🙌</p>
+              </div>
+
+              <!-- Box CTA Gelap (Bawah Kiri-Tengah, persis seperti referensi) -->
+              <div class="cta-box" style="left:52px;top:1126px;width:668px;height:140px;padding:16px 20px;gap:18px">
+                <div class="cta-badge" data-icon="link"></div>
+                <div class="cta-content">
+                  <h4>Daftar Sekarang!</h4>
+                  <p>Isi formulir pendaftaran melalui link atau scan QR code berikut:</p>
+                  <div class="url-pill"><span data-icon="link"></span>forms.gle/MZZMRr3WdcMxSMEDA</div>
+                </div>
+                <div class="cta-divider"></div>
+                <div class="qr-card">
+                  <div class="qr-frame">
+                    <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+                    <img src="assets/qr-daftar.svg" alt="QR Pendaftaran" />
+                  </div>
+                  <span>Scan di sini</span>
+                </div>
+              </div>
+
+              <!-- Signature HIMSISFO di Kanan Bawah -->
+              <div class="sig-wrap" style="left:770px;top:1158px">
+                <div class="sig-text">HIMSISFO</div>
+                <div class="sig-swoosh"></div>
+              </div>
+
+              <!-- Wave Footer Berlapis -->
+              <footer class="wave-footer" data-tpl="footer"></footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OPSI B — CAROUSEL (3 SLIDE) ================= -->
+    <section class="group" data-group="carousel">
+      <div class="group-head">
+        <h2>Opsi B — Carousel Instagram <span>3 Slide Berurutan</span></h2>
+        <p>Teks jauh lebih besar dan lega untuk dibaca di layar HP. Upload berurutan Slide 1 → Slide 2 → Slide 3.</p>
+      </div>
+
+      <div class="grid">
+
+        <!-- ===================== SLIDE 1 — COVER ===================== -->
+        <div class="item" data-id="carousel-1">
+          <div class="item-bar">
+            <div class="item-meta">
+              <span class="item-tag">SLIDE 1/3</span>
+              <span class="item-name">carousel-1.png</span>
+            </div>
+            <div class="item-actions">
+              <button class="btn" data-copy>📋 Copy</button>
+              <a class="btn primary" href="export/carousel-1.png" download="carousel-1.png" data-dl>⬇ Download PNG</a>
+            </div>
+          </div>
+
+          <div class="frame">
+            <article class="poster" id="carousel-1">
+              <div class="side-swoosh-l" style="bottom:220px"></div>
+              <div class="side-swoosh-r" style="top:380px"></div>
+              <div class="dots" style="left:36px;top:490px;width:80px;height:64px"></div>
+
+              <header class="header" data-tpl="header"></header>
+
+              <!-- Judul Besar Miring -->
+              <div class="hero-title" style="left:52px;top:162px;width:620px">
+                <div class="t-top" style="font-size:94px">
+                  <span class="rays-l"><i></i><i></i><i></i></span>
+                  HIMSISFO
+                  <span class="rays-r"><i></i><i></i></span>
+                </div>
+                <div class="t-pill" style="font-size:50px;padding:12px 44px 18px;margin-top:10px">Kunjungan Edukatif ke</div>
+                <div class="t-bank" style="font-size:72px;margin-top:12px">BANK INDONESIA</div>
+                <div class="t-bi" style="font-size:54px;padding:6px 36px 10px;margin-top:10px">(BI)</div>
+              </div>
+
+              <!-- Kutipan Kanan Atas -->
+              <div class="bi-quote" style="right:48px;top:172px;width:310px;font-size:30px">
+                Mengenal<br/>Lebih Dekat<br/>Peran Bank Indonesia<br/>dalam Perekonomian<br/>Indonesia
+              </div>
+
+              <!-- Visual Gedung BI Besar -->
+              <div class="bi-visual" style="left:240px;top:410px;width:840px;height:640px">
+                <div class="bi-photo-mask" style="border-radius:60px 0 0 180px">
+                  <img src="assets/Bank-Indonesia-Banner-Photo.jpg" alt="Gedung Bank Indonesia" />
+                </div>
+              </div>
+
+              <span class="spark" style="right:88px;top:375px;width:40px;height:40px" data-icon="spark"></span>
+              <span class="spark v" style="left:360px;top:560px;width:32px;height:32px" data-icon="spark"></span>
+
+              <!-- Card Sapaan Bawah -->
+              <div class="card" style="left:52px;right:52px;top:988px;padding:28px 34px;background:rgba(255,255,255,.95)">
+                <div class="greet" style="position:static">
+                  <h3 style="font-size:30px">Halo, Mahasiswa Sistem Informasi UNSIA! <span class="wave">👋</span></h3>
+                  <p style="font-size:19.5px;line-height:1.52;margin-top:10px">HIMSISFO membuka pendaftaran bagi mahasiswa Program Studi Sistem Informasi yang ingin mengikuti kegiatan kunjungan edukatif ke Bank Indonesia (BI) melalui program <b>BINGO (Bank Indonesia Ngobrol dengan Komunitas)</b>.</p>
+                </div>
+              </div>
+
+              <div class="pager" style="left:52px;top:936px">
+                <span class="dots-i"><i class="on"></i><i></i><i></i></span>
+              </div>
+              <div class="pager" style="right:52px;top:922px">
+                <span class="swipe">Geser untuk detail <span data-icon="arrow"></span></span>
+              </div>
+
+              <footer class="wave-footer" data-tpl="footer"></footer>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===================== SLIDE 2 — TENTANG BINGO & INFO ===================== -->
+        <div class="item" data-id="carousel-2">
+          <div class="item-bar">
+            <div class="item-meta">
+              <span class="item-tag">SLIDE 2/3</span>
+              <span class="item-name">carousel-2.png</span>
+            </div>
+            <div class="item-actions">
+              <button class="btn" data-copy>📋 Copy</button>
+              <a class="btn primary" href="export/carousel-2.png" download="carousel-2.png" data-dl>⬇ Download PNG</a>
+            </div>
+          </div>
+
+          <div class="frame">
+            <article class="poster" id="carousel-2">
+              <div class="side-swoosh-r" style="top:140px"></div>
+              <div class="side-swoosh-l" style="bottom:140px"></div>
+              <div class="dots" style="right:52px;top:540px;width:80px;height:48px"></div>
+              <div class="dots lime" style="left:48px;bottom:140px;width:80px;height:48px"></div>
+              <span class="spark v" style="right:88px;top:185px;width:34px;height:34px" data-icon="spark"></span>
+
+              <header class="header" data-tpl="header"></header>
+
+              <div class="eyebrow" style="left:52px;top:156px">Kunjungan Edukatif · Bank Indonesia</div>
+              <div class="slide-h2" style="left:52px;top:184px">Kenalan dulu dengan <em>BINGO</em></div>
+
+              <!-- Card Tentang Program BINGO -->
+              <div class="card" style="left:52px;right:52px;top:300px;padding:52px 36px 28px">
+                <div class="chip">
+                  <span class="ic" style="width:64px;height:64px" data-icon="book"></span>
+                  <span class="label" style="font-size:23px;padding:12px 32px 12px 38px">Tentang Program BINGO</span>
+                </div>
+                <p style="font-size:21px;line-height:1.58">BINGO merupakan program edukasi Bank Indonesia yang bertujuan meningkatkan pemahaman masyarakat mengenai tugas, peran, fungsi, serta kebijakan Bank Indonesia. Program ini menjadi sarana bagi berbagai kalangan, termasuk mahasiswa, untuk mengenal lebih dekat peran Bank Indonesia dalam menjaga stabilitas perekonomian Indonesia.</p>
+              </div>
+
+              <!-- Card Informasi Kegiatan -->
+              <div class="card" style="left:52px;right:52px;top:676px;padding:50px 36px 14px">
+                <div class="chip center">
+                  <span class="ic" style="width:64px;height:64px" data-icon="calendar"></span>
+                  <span class="label" style="font-size:23px;padding:12px 32px 12px 38px">Informasi Kegiatan</span>
+                </div>
+                <div class="info-row" style="grid-template-columns:56px 200px 16px 1fr;padding:13px 0"><span class="info-ic" style="width:50px;height:50px" data-icon="users"></span><span class="k" style="font-size:20px">Penyelenggara</span><span class="sep" style="font-size:20px">:</span><span class="v" style="font-size:20px">HIMSISFO</span></div>
+                <div class="info-row" style="grid-template-columns:56px 200px 16px 1fr;padding:13px 0"><span class="info-ic" style="width:50px;height:50px" data-icon="cap"></span><span class="k" style="font-size:20px">Peserta</span><span class="sep" style="font-size:20px">:</span><span class="v" style="font-size:20px">Mahasiswa Program Studi Sistem Informasi UNSIA</span></div>
+                <div class="info-row" style="grid-template-columns:56px 200px 16px 1fr;padding:13px 0"><span class="info-ic" style="width:50px;height:50px" data-icon="calendar"></span><span class="k" style="font-size:20px">Tanggal</span><span class="sep" style="font-size:20px">:</span><span class="v" style="font-size:20px"><b>05 November 2026</b></span></div>
+                <div class="info-row" style="grid-template-columns:56px 200px 16px 1fr;padding:13px 0"><span class="info-ic" style="width:50px;height:50px" data-icon="clock"></span><span class="k" style="font-size:20px">Waktu</span><span class="sep" style="font-size:20px">:</span><span class="v" style="font-size:20px"><b>07.30 – 11.30 WIB</b></span></div>
+                <div class="info-row" style="grid-template-columns:56px 200px 16px 1fr;padding:13px 0"><span class="info-ic" style="width:50px;height:50px" data-icon="users"></span><span class="k" style="font-size:20px">Kuota peserta</span><span class="sep" style="font-size:20px">:</span><span class="v" style="font-size:20px">Terbatas, maksimal <b>50 orang</b> termasuk dosen.</span></div>
+              </div>
+
+              <div class="pager" style="left:52px;top:1214px">
+                <span class="dots-i"><i></i><i class="on"></i><i></i></span>
+              </div>
+              <div class="pager" style="right:52px;top:1202px">
+                <span class="swipe">Ketentuan & Daftar <span data-icon="arrow"></span></span>
+              </div>
+
+              <footer class="wave-footer" data-tpl="footer"></footer>
+            </article>
+          </div>
+        </div>
+
+        <!-- ===================== SLIDE 3 — KETENTUAN & CTA DAFTAR ===================== -->
+        <div class="item" data-id="carousel-3">
+          <div class="item-bar">
+            <div class="item-meta">
+              <span class="item-tag">SLIDE 3/3</span>
+              <span class="item-name">carousel-3.png</span>
+            </div>
+            <div class="item-actions">
+              <button class="btn" data-copy>📋 Copy</button>
+              <a class="btn primary" href="export/carousel-3.png" download="carousel-3.png" data-dl>⬇ Download PNG</a>
+            </div>
+          </div>
+
+          <div class="frame">
+            <article class="poster" id="carousel-3">
+              <div class="side-swoosh-r" style="top:130px"></div>
+              <div class="side-swoosh-l" style="bottom:140px"></div>
+              <div class="dots" style="left:470px;top:625px;width:96px;height:32px"></div>
+              <span class="spark" style="right:84px;top:178px;width:34px;height:34px" data-icon="spark"></span>
+
+              <header class="header" data-tpl="header"></header>
+
+              <!-- Card Ketentuan Pendaftaran -->
+              <div class="card" style="left:52px;right:52px;top:186px;padding:54px 36px 28px">
+                <div class="chip">
+                  <span class="ic" style="width:64px;height:64px" data-icon="clipboard"></span>
+                  <span class="label" style="font-size:23px;padding:12px 32px 12px 38px">Ketentuan Pendaftaran</span>
+                </div>
+                <ol class="rules" style="gap:16px">
+                  <li style="grid-template-columns:48px 1fr;column-gap:16px"><span class="n" style="width:48px;height:48px;font-size:21px">1</span><p style="font-size:20px;line-height:1.42">Pendaftaran dibuka khusus bagi mahasiswa Program Studi Sistem Informasi UNSIA.</p></li>
+                  <li style="grid-template-columns:48px 1fr;column-gap:16px"><span class="n" style="width:48px;height:48px;font-size:21px">2</span><p style="font-size:20px;line-height:1.42">Setiap peserta wajib mengisi formulir dengan data yang benar dan lengkap.</p></li>
+                  <li style="grid-template-columns:48px 1fr;column-gap:16px"><span class="n" style="width:48px;height:48px;font-size:21px">3</span><p style="font-size:20px;line-height:1.42">Peserta wajib memiliki komitmen untuk hadir dan mengikuti rangkaian kegiatan sesuai jadwal yang ditentukan.</p></li>
+                  <li style="grid-template-columns:48px 1fr;column-gap:16px"><span class="n" style="width:48px;height:48px;font-size:21px">4</span><p style="font-size:20px;line-height:1.42">Mengingat kuota peserta terbatas, pendaftaran akan disesuaikan dengan ketersediaan kuota.</p></li>
+                </ol>
+              </div>
+
+              <!-- Banner Jangan Lewatkan + Note -->
+              <div class="brush-wrap" style="left:56px;top:674px;width:410px">
+                <div class="brush-banner" style="font-size:40px;padding:16px 42px 20px">
+                  Jangan lewatkan<br/>kesempatan ini!
+                  <span class="brush-rays"><i></i><i></i><i></i></span>
+                </div>
+              </div>
+
+              <div class="closing-note" style="left:510px;top:666px;width:518px">
+                <p style="font-size:18.5px;line-height:1.52">Pastikan kamu telah mempertimbangkan jadwal dan kesiapan untuk mengikuti kegiatan sebelum melakukan pendaftaran.</p>
+                <p style="font-size:18.5px;line-height:1.52;margin-top:10px">Mari ikut serta dalam kegiatan kunjungan edukatif ini bersama <b>HIMSISFO!</b> 🙌</p>
+              </div>
+
+              <!-- CTA Box Besar -->
+              <div class="cta-box" style="left:52px;right:52px;top:874px;height:280px;padding:28px 34px;gap:26px;border-radius:26px">
+                <div class="cta-badge" style="width:74px;height:74px" data-icon="link"></div>
+                <div class="cta-content">
+                  <h4 style="font-size:36px">Daftar Sekarang!</h4>
+                  <p style="font-size:18.5px;margin-top:6px">Isi formulir pendaftaran melalui link atau scan QR code berikut:</p>
+                  <div class="url-pill" style="font-size:20px;padding:13px 22px;margin-top:18px"><span data-icon="link"></span>forms.gle/MZZMRr3WdcMxSMEDA</div>
+                </div>
+                <div class="cta-divider"></div>
+                <div class="qr-card" style="padding:14px 16px 10px;border-radius:20px">
+                  <div class="qr-frame" style="padding:8px">
+                    <span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span>
+                    <img src="assets/qr-daftar.svg" alt="QR Pendaftaran" style="width:168px;height:168px" />
+                  </div>
+                  <span style="font-size:15px;margin-top:6px">Scan di sini</span>
+                </div>
+              </div>
+
+              <div class="sig-wrap" style="right:76px;top:1174px">
+                <div class="sig-text">HIMSISFO</div>
+                <div class="sig-swoosh"></div>
+              </div>
+
+              <div class="pager" style="left:52px;top:1214px">
+                <span class="dots-i"><i></i><i></i><i class="on"></i></span>
+              </div>
+
+              <footer class="wave-footer" data-tpl="footer"></footer>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- html-to-image: render DOM -> PNG saat dijalankan di server -->
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
