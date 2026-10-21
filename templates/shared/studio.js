@@ -24,8 +24,8 @@ document.querySelectorAll('[data-icon]').forEach((el) => {
 
 const HEADER = `
   <div class="brand">
-    <img class="logo-hima" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
     <img class="logo-univ" src="../../assets/logo-universitas.jpg" alt="Logo Universitas Siber Asia" />
+    <img class="logo-hima" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
     <span class="vr"></span>
     <div class="brand-text"><b>HIMSISFO</b><span>Himpunan Mahasiswa Sistem Informasi</span></div>
   </div>

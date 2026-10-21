@@ -10,8 +10,8 @@
     },
     "repository": "https://github.com/himsisfo-unsia/design-as-code",
     "assets": {
-      "logoHima": "assets/logo-himsisfo.png",
       "logoUniv": "assets/logo-universitas.jpg",
+      "logoHima": "assets/logo-himsisfo.png",
       "themeGuidelinePdf": "assets/konsep-tema-hima-2026-2027.pdf",
       "themeCss": "assets/theme.css"
     }
