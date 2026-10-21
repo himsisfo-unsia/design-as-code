@@ -135,10 +135,10 @@
 .greet { position: absolute; z-index: 6; }
 .greet h3 { font: 800 25px/1.22 var(--f-head); color: var(--navy); }
 .greet h3 .wave { display: inline-block; transform: rotate(8deg); }
-.greet p { margin-top: 8px; font-size: 15.5px; line-height: 1.5; color: var(--ink); }
+.greet p { margin-top: 8px; font-size: 15.5px; line-height: 1.5; color: var(--ink); text-align: justify; }
 .greet p b { color: var(--navy); font-weight: 800; }
 
-.card p { font-size: 15px; line-height: 1.54; color: var(--ink); }
+.card p { font-size: 15px; line-height: 1.54; color: var(--ink); text-align: justify; }
 
 .info-row {
   display: grid;
@@ -175,7 +175,7 @@
   display: grid; place-items: center;
   box-shadow: 0 5px 12px rgba(37, 99, 235, .28);
 }
-.rules p { font-size: 14px; line-height: 1.38; color: var(--ink); }
+.rules p { font-size: 14px; line-height: 1.38; color: var(--ink); text-align: justify; }
 
 /* ---------- Brush Banner & Note ---------- */
 .brush-wrap {
@@ -208,7 +208,7 @@
 .brush-rays i:nth-child(3) { width: 20px; height: 5px; border-radius: 4px; background: var(--mint); transform: rotate(16deg); }
 
 .closing-note { position: absolute; z-index: 6; }
-.closing-note p { font-size: 14.5px; line-height: 1.46; color: var(--ink); }
+.closing-note p { font-size: 14.5px; line-height: 1.46; color: var(--ink); text-align: justify; }
 .closing-note p + p { margin-top: 7px; }
 .closing-note b { color: var(--navy); font-weight: 800; }
 
@@ -234,7 +234,7 @@
 .cta-badge svg { width: 28px; height: 28px; }
 .cta-content { flex: 1; min-width: 0; }
 .cta-content h4 { font: 800 25px/1.1 var(--f-head); color: #FFFFFF; }
-.cta-content p { margin-top: 3px; font-size: 13.5px; line-height: 1.35; color: #CBD5E1; }
+.cta-content p { margin-top: 3px; font-size: 13.5px; line-height: 1.35; color: #CBD5E1; text-align: left; }
 .url-pill {
   margin-top: 9px;
   display: flex; align-items: center; gap: 9px;

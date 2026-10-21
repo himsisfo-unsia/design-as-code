@@ -234,6 +234,9 @@ body.only .frame { --s: 1 !important; width: 1080px !important; height: 1350px !
   font-family: var(--f-body);
   -webkit-font-smoothing: antialiased;
 }
+.poster p {
+  text-align: justify;
+}
 
 .side-swoosh-l {
   position: absolute; left: -155px; bottom: 160px; width: 320px; height: 290px;
