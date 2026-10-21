@@ -13,39 +13,37 @@
 
   <!-- ================= STUDIO TOOLBAR (Tidak ikut diexport) ================= -->
   <nav class="toolbar">
-    <div class="tb-left"><a class="btn" href="../../index.html" style="padding:7px 12px;font-size:12.5px">← Hub</a>
-      <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
-      <div class="tb-title">
-        <h1>Kunjungan Edukatif ke Bank Indonesia <span class="tb-badge">IG 4:5 · 1080×1350</span></h1>
-        <p>HIMSISFO UNSIA 2026/2027 · Program BINGO (Bank Indonesia Ngobrol dengan Komunitas)</p>
+    <div class="tb-inner">
+      <div class="tb-left">
+        <a class="tb-brand" href="../../index.html">
+          <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+          <img class="tb-logo-univ" src="../../assets/logo-universitas.jpg" alt="Logo UNSIA" />
+          <span class="tb-brand-name">HIMSISFO UNSIA</span>
+        </a>
+        <span class="tb-sep"></span>
+        <div class="tb-title">
+          <h1>Kunjungan Edukatif ke Bank Indonesia</h1>
+          <span class="tb-badge">4:5 · 1080×1350</span>
+        </div>
       </div>
-    </div>
 
-    <div class="tb-tabs">
-      <button class="tab active" data-filter="all">Semua Desain (4)</button>
-      <button class="tab" data-filter="single">Opsi A · Single Post</button>
-      <button class="tab" data-filter="carousel">Opsi B · Carousel (3 Slide)</button>
-    </div>
+      <div class="tb-nav">
+        <a class="nav-link" href="../../index.html">Beranda</a>
+        <button class="tab active" data-filter="all">Semua</button>
+        <button class="tab" data-filter="single">Single Post</button>
+        <button class="tab" data-filter="carousel">Carousel</button>
+      </div>
 
-    <div class="tb-actions">
-      <div class="ctrl">
-        <span>Zoom</span>
-        <select id="zoom">
-          <option value=".34">34%</option>
-          <option value=".42" selected>42%</option>
-          <option value=".55">55%</option>
-          <option value=".75">75%</option>
-          <option value="1">100%</option>
-        </select>
+      <div class="tb-actions">
+        <div class="ctrl">
+          <span>Kualitas</span>
+          <select id="ratio">
+            <option value="1">1x (1080p)</option>
+            <option value="2">2x (HD)</option>
+          </select>
+        </div>
+        <button class="btn primary" id="dl-all">Download Semua</button>
       </div>
-      <div class="ctrl">
-        <span>Kualitas</span>
-        <select id="ratio">
-          <option value="1">1080 × 1350 (Standar IG)</option>
-          <option value="2">2160 × 2700 (Ultra HD)</option>
-        </select>
-      </div>
-      <button class="btn primary" id="dl-all">⬇ Download Semua PNG</button>
     </div>
   </nav>
 
@@ -54,20 +52,16 @@
     <!-- ================= OPSI A — SINGLE POST (4:5) ================= -->
     <section class="group" data-group="single">
       <div class="group-head">
-        <h2>Opsi A — Single Post <span>1 Gambar Utuh</span></h2>
-        <p>Seluruh informasi dalam satu kanvas 1080 × 1350 px persis seperti komposisi poster referensi.</p>
+        <h2>Single Post</h2>
       </div>
 
       <div class="grid">
         <div class="item" data-id="poster-single">
           <div class="item-bar">
-            <div class="item-meta">
-              <span class="item-tag">4:5 SINGLE</span>
-              <span class="item-name">poster-single.png</span>
-            </div>
+            <span class="item-name">poster-single.png</span>
             <div class="item-actions">
-              <button class="btn" data-copy>📋 Copy</button>
-              <a class="btn primary" href="export/poster-single.png" download="poster-single.png" data-dl>⬇ Download PNG</a>
+              <button class="btn" data-copy>Copy</button>
+              <a class="btn primary" href="export/poster-single.png" download="poster-single.png" data-dl>Download PNG</a>
             </div>
           </div>
 
@@ -220,8 +214,7 @@
     <!-- ================= OPSI B — CAROUSEL (3 SLIDE) ================= -->
     <section class="group" data-group="carousel">
       <div class="group-head">
-        <h2>Opsi B — Carousel Instagram <span>3 Slide Berurutan</span></h2>
-        <p>Teks jauh lebih besar dan lega untuk dibaca di layar HP. Upload berurutan Slide 1 → Slide 2 → Slide 3.</p>
+        <h2>Carousel</h2>
       </div>
 
       <div class="grid">
@@ -229,13 +222,10 @@
         <!-- ===================== SLIDE 1 — COVER ===================== -->
         <div class="item" data-id="carousel-1">
           <div class="item-bar">
-            <div class="item-meta">
-              <span class="item-tag">SLIDE 1/3</span>
-              <span class="item-name">carousel-1.png</span>
-            </div>
+            <span class="item-name">carousel-1.png</span>
             <div class="item-actions">
-              <button class="btn" data-copy>📋 Copy</button>
-              <a class="btn primary" href="export/carousel-1.png" download="carousel-1.png" data-dl>⬇ Download PNG</a>
+              <button class="btn" data-copy>Copy</button>
+              <a class="btn primary" href="export/carousel-1.png" download="carousel-1.png" data-dl>Download PNG</a>
             </div>
           </div>
 
@@ -297,13 +287,10 @@
         <!-- ===================== SLIDE 2 — TENTANG BINGO & INFO ===================== -->
         <div class="item" data-id="carousel-2">
           <div class="item-bar">
-            <div class="item-meta">
-              <span class="item-tag">SLIDE 2/3</span>
-              <span class="item-name">carousel-2.png</span>
-            </div>
+            <span class="item-name">carousel-2.png</span>
             <div class="item-actions">
-              <button class="btn" data-copy>📋 Copy</button>
-              <a class="btn primary" href="export/carousel-2.png" download="carousel-2.png" data-dl>⬇ Download PNG</a>
+              <button class="btn" data-copy>Copy</button>
+              <a class="btn primary" href="export/carousel-2.png" download="carousel-2.png" data-dl>Download PNG</a>
             </div>
           </div>
 
@@ -357,13 +344,10 @@
         <!-- ===================== SLIDE 3 — KETENTUAN & CTA DAFTAR ===================== -->
         <div class="item" data-id="carousel-3">
           <div class="item-bar">
-            <div class="item-meta">
-              <span class="item-tag">SLIDE 3/3</span>
-              <span class="item-name">carousel-3.png</span>
-            </div>
+            <span class="item-name">carousel-3.png</span>
             <div class="item-actions">
-              <button class="btn" data-copy>📋 Copy</button>
-              <a class="btn primary" href="export/carousel-3.png" download="carousel-3.png" data-dl>⬇ Download PNG</a>
+              <button class="btn" data-copy>Copy</button>
+              <a class="btn primary" href="export/carousel-3.png" download="carousel-3.png" data-dl>Download PNG</a>
             </div>
           </div>
 
@@ -444,6 +428,6 @@
 
   <!-- html-to-image: render DOM -> PNG saat dijalankan di server -->
   <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
-  <script src="script.js"></script>
+  <script src="../../templates/shared/studio.js"></script>
 </body>
 </html>

@@ -12,30 +12,35 @@
 <body>
 
   <nav class="toolbar">
-    <div class="tb-left">
-      <a class="tb-back" href="../../index.html">← Kembali ke Hub</a>
-      <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
-      <div class="tb-title">
-        <h1>Base Template · Instagram Story / Reels <span class="tb-badge">9:16 · 1080×1920 px</span></h1>
-        <p>Salin folder ini ke <code>projects/nama-kegiatan/</code> untuk membuat Story atau cover Reels.</p>
+    <div class="tb-inner">
+      <div class="tb-left">
+        <a class="tb-brand" href="../../index.html">
+          <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+          <img class="tb-logo-univ" src="../../assets/logo-universitas.jpg" alt="Logo UNSIA" />
+          <span class="tb-brand-name">HIMSISFO UNSIA</span>
+        </a>
+        <span class="tb-sep"></span>
+        <div class="tb-title">
+          <h1>Instagram Story</h1>
+          <span class="tb-badge">9:16 · 1080×1920</span>
+        </div>
       </div>
-    </div>
-    <div class="tb-actions">
-      <div class="ctrl">
-        <span>Zoom</span>
-        <select id="zoom">
-          <option value=".28">28%</option>
-          <option value=".34" selected>34%</option>
-          <option value=".5">50%</option>
-          <option value="1">100%</option>
-        </select>
+
+      <div class="tb-nav">
+        <a class="nav-link" href="../../index.html">Beranda</a>
+        <a class="nav-link" href="../ig-feed-4x5/index.html">IG 4:5</a>
+        <a class="nav-link active" href="../ig-story-9x16/index.html">Story 9:16</a>
+        <a class="nav-link" href="../banner-16x9/index.html">Banner 16:9</a>
       </div>
-      <div class="ctrl">
-        <span>Kualitas</span>
-        <select id="ratio">
-          <option value="1">1080 × 1920 (1x)</option>
-          <option value="2">2160 × 3840 (2x HD)</option>
-        </select>
+
+      <div class="tb-actions">
+        <div class="ctrl">
+          <span>Kualitas</span>
+          <select id="ratio">
+            <option value="1">1x (1080p)</option>
+            <option value="2">2x (HD)</option>
+          </select>
+        </div>
       </div>
     </div>
   </nav>
@@ -44,16 +49,14 @@
     <div class="grid">
       <div class="item" data-id="template-ig-story-9x16">
         <div class="item-bar">
-          <div class="item-meta">
-            <span class="item-tag">STARTER 9:16</span>
-            <span class="item-name">template-ig-story-9x16.png</span>
-          </div>
+          <span class="item-name">template-ig-story-9x16.png</span>
           <div class="item-actions">
-            <button class="btn primary" data-dl>⬇ Download PNG</button>
+            <button class="btn" data-copy>Copy</button>
+            <button class="btn primary" data-dl>Download PNG</button>
           </div>
         </div>
 
-        <div class="frame" style="--w:1080px;--h:1920px;--s:.34">
+        <div class="frame">
           <article class="poster" id="template-ig-story-9x16" data-w="1080" data-h="1920">
             <div class="side-swoosh-l" style="bottom:320px"></div>
             <div class="side-swoosh-r" style="top:460px"></div>

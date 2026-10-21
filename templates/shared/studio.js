@@ -1,5 +1,6 @@
 /* =========================================================
-   HIMSISFO Shared Studio Script (templates/shared/studio.js)
+   HIMSISFO Unified Studio Script (templates/shared/studio.js)
+   Dipakai bersama oleh semua halaman di templates/ & projects/
    ========================================================= */
 
 const ICONS = {
@@ -55,28 +56,80 @@ const FOOTER = `
 document.querySelectorAll('[data-tpl="header"]').forEach((el) => (el.innerHTML = HEADER));
 document.querySelectorAll('[data-tpl="footer"]').forEach((el) => (el.innerHTML = FOOTER));
 
-const zoomSel = document.getElementById('zoom');
-zoomSel?.addEventListener('change', () => {
-  document.querySelectorAll('.frame').forEach((f) => f.style.setProperty('--s', zoomSel.value));
+/* ---------- Mode Render Tunggal (?only=<id>) ---------- */
+const only = new URLSearchParams(location.search).get('only');
+if (only) {
+  document.body.classList.add('only');
+  document.querySelector(`.item[data-id="${only}"]`)?.classList.add('target');
+}
+
+/* ---------- Auto-Fit Responsive Frame (Tanpa Dropdown Zoom) ---------- */
+function fitFrames() {
+  if (only) return;
+  document.querySelectorAll('.frame').forEach((frame) => {
+    const poster = frame.querySelector('.poster');
+    if (!poster) return;
+    const w = Number(poster.dataset.w) || 1080;
+    const h = Number(poster.dataset.h) || 1350;
+    if (w > h) {
+      frame.closest('.grid')?.classList.add('landscape');
+    }
+    poster.style.width = `${w}px`;
+    poster.style.height = `${h}px`;
+    frame.style.aspectRatio = `${w} / ${h}`;
+    const cw = frame.clientWidth;
+    if (cw > 0) {
+      const s = cw / w;
+      frame.style.setProperty('--s', s.toFixed(5));
+    }
+  });
+}
+
+fitFrames();
+window.addEventListener('resize', fitFrames);
+if (typeof ResizeObserver !== 'undefined') {
+  const ro = new ResizeObserver(fitFrames);
+  document.querySelectorAll('.frame').forEach((f) => ro.observe(f));
+}
+
+/* ---------- Studio Filter Tabs ---------- */
+document.querySelectorAll('.tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.group').forEach((g) => {
+      g.classList.toggle('hidden', filter !== 'all' && g.dataset.group !== filter);
+    });
+    fitFrames();
+  });
 });
 
+/* ---------- Toast ---------- */
 const toast = (msg) => {
   const t = document.getElementById('toast');
   if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(t._h);
-  t._h = setTimeout(() => t.classList.remove('show'), 2800);
+  t._h = setTimeout(() => t.classList.remove('show'), 2500);
 };
 
-async function exportPoster(node, filename) {
+/* ---------- Render & Download PNG ---------- */
+async function renderBlob(item) {
+  const id = item.dataset.id;
+  const poster = document.getElementById(id);
+  const dlLink = item.querySelector('a[data-dl]');
+  if (location.protocol === 'file:' && dlLink?.getAttribute('href')) {
+    const res = await fetch(dlLink.getAttribute('href'));
+    return res.blob();
+  }
   if (location.protocol === 'file:') {
-    toast('Buka lewat local server (`npx serve .`) atau GitHub Pages untuk me-render template menjadi PNG.');
-    return;
+    throw new Error('Jalankan via local server (`npx serve .`) untuk me-render kanvas baru.');
   }
   await document.fonts.ready;
-  const w = Number(node.dataset.w) || 1080;
-  const h = Number(node.dataset.h) || 1350;
+  const w = Number(poster.dataset.w) || 1080;
+  const h = Number(poster.dataset.h) || 1350;
   const ratio = Number(document.getElementById('ratio')?.value) || 1;
   const opts = {
     width: w, height: h,
@@ -84,22 +137,128 @@ async function exportPoster(node, filename) {
     cacheBust: true,
     style: { transform: 'none', margin: '0' },
   };
-  toast(`Membuat ${filename}…`);
-  await htmlToImage.toPng(node, opts);
-  const blob = await htmlToImage.toBlob(node, opts);
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
-  toast(`✔ ${filename} berhasil diunduh!`);
+  await htmlToImage.toPng(poster, opts);
+  return htmlToImage.toBlob(poster, opts);
 }
 
-document.querySelectorAll('.item').forEach((item) => {
+async function downloadItem(item) {
   const id = item.dataset.id;
-  const poster = document.getElementById(id);
-  item.querySelector('[data-dl]')?.addEventListener('click', (e) => {
+  const dlLink = item.querySelector('a[data-dl]');
+  if (location.protocol === 'file:' && dlLink?.getAttribute('href')) {
+    const a = document.createElement('a');
+    a.href = dlLink.getAttribute('href');
+    a.download = `${id}.png`;
+    a.click();
+    return;
+  }
+  const blob = await renderBlob(item);
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${id}.png`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+const items = Array.from(document.querySelectorAll('.item'));
+
+items.forEach((item) => {
+  const id = item.dataset.id;
+  item.querySelector('[data-dl]')?.addEventListener('click', async (e) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (location.protocol === 'file:' && href) {
+      toast(`✔ Mengunduh ${id}.png`);
+      return;
+    }
     e.preventDefault();
-    exportPoster(poster, `${id}.png`);
+    try {
+      toast(`Membuat ${id}.png…`);
+      await downloadItem(item);
+      toast(`✔ ${id}.png diunduh`);
+    } catch (err) {
+      toast(err.message);
+    }
   });
+
+  item.querySelector('[data-copy]')?.addEventListener('click', async () => {
+    try {
+      const blob = await renderBlob(item);
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      toast('✔ Gambar disalin ke clipboard');
+    } catch {
+      toast('Buka lewat local server / GitHub Pages untuk fitur Copy.');
+    }
+  });
+});
+
+document.getElementById('dl-all')?.addEventListener('click', async () => {
+  try {
+    for (const item of items) {
+      await downloadItem(item);
+    }
+    toast('✔ Semua PNG diunduh');
+  } catch (err) {
+    toast(err.message);
+  }
+});
+
+/* ---------- Lightbox Zoom (Live Clone — Bekerja di Project & Template) ---------- */
+const lb = document.createElement('div');
+lb.className = 'lightbox';
+lb.innerHTML = `
+  <div class="lb-bar" id="lb-bar">
+    <button class="lb-btn" id="lb-prev">Sebelumnya</button>
+    <span class="lb-title" id="lb-title">poster.png</span>
+    <button class="lb-btn" id="lb-next">Berikutnya</button>
+    <button class="lb-btn primary" id="lb-dl">Download PNG</button>
+    <button class="lb-btn" id="lb-close">Tutup</button>
+  </div>
+  <div class="lb-stage" id="lb-stage"></div>
+`;
+document.body.appendChild(lb);
+
+let curIdx = 0;
+
+function openLightbox(idx) {
+  curIdx = (idx + items.length) % items.length;
+  const item = items[curIdx];
+  const poster = item.querySelector('.poster');
+  const w = Number(poster.dataset.w) || 1080;
+  const h = Number(poster.dataset.h) || 1350;
+  const scale = Math.min((window.innerWidth * 0.9) / w, (window.innerHeight * 0.82) / h);
+
+  const stage = document.getElementById('lb-stage');
+  stage.style.width = `${Math.round(w * scale)}px`;
+  stage.style.height = `${Math.round(h * scale)}px`;
+  stage.innerHTML = '';
+
+  const clone = poster.cloneNode(true);
+  clone.removeAttribute('id');
+  clone.style.width = `${w}px`;
+  clone.style.height = `${h}px`;
+  clone.style.transform = `scale(${scale})`;
+  clone.style.transformOrigin = 'top left';
+  stage.appendChild(clone);
+
+  document.getElementById('lb-title').textContent = `${item.dataset.id}.png (${w}×${h})`;
+  const multi = items.length > 1;
+  document.getElementById('lb-prev').style.display = multi ? '' : 'none';
+  document.getElementById('lb-next').style.display = multi ? '' : 'none';
+  lb.classList.add('open');
+}
+
+items.forEach((item, idx) => {
+  item.querySelector('.frame')?.addEventListener('click', () => openLightbox(idx));
+});
+
+document.getElementById('lb-prev').addEventListener('click', (e) => { e.stopPropagation(); openLightbox(curIdx - 1); });
+document.getElementById('lb-next').addEventListener('click', (e) => { e.stopPropagation(); openLightbox(curIdx + 1); });
+document.getElementById('lb-dl').addEventListener('click', (e) => { e.stopPropagation(); downloadItem(items[curIdx]); });
+document.getElementById('lb-close').addEventListener('click', () => lb.classList.remove('open'));
+document.getElementById('lb-bar').addEventListener('click', (e) => e.stopPropagation());
+lb.addEventListener('click', () => lb.classList.remove('open'));
+window.addEventListener('keydown', (e) => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') lb.classList.remove('open');
+  if (e.key === 'ArrowLeft') openLightbox(curIdx - 1);
+  if (e.key === 'ArrowRight') openLightbox(curIdx + 1);
 });

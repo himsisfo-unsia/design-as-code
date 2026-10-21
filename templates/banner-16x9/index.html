@@ -12,48 +12,51 @@
 <body>
 
   <nav class="toolbar">
-    <div class="tb-left">
-      <a class="tb-back" href="../../index.html">← Kembali ke Hub</a>
-      <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
-      <div class="tb-title">
-        <h1>Base Template · Landscape Banner <span class="tb-badge">16:9 · 1920×1080 px</span></h1>
-        <p>Cocok untuk spanduk acara, Virtual Background Zoom, atau header YouTube/LinkedIn.</p>
+    <div class="tb-inner">
+      <div class="tb-left">
+        <a class="tb-brand" href="../../index.html">
+          <img class="tb-logo" src="../../assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
+          <img class="tb-logo-univ" src="../../assets/logo-universitas.jpg" alt="Logo UNSIA" />
+          <span class="tb-brand-name">HIMSISFO UNSIA</span>
+        </a>
+        <span class="tb-sep"></span>
+        <div class="tb-title">
+          <h1>Landscape Banner</h1>
+          <span class="tb-badge">16:9 · 1920×1080</span>
+        </div>
       </div>
-    </div>
-    <div class="tb-actions">
-      <div class="ctrl">
-        <span>Zoom</span>
-        <select id="zoom">
-          <option value=".35">35%</option>
-          <option value=".45" selected>45%</option>
-          <option value=".6">60%</option>
-          <option value="1">100%</option>
-        </select>
+
+      <div class="tb-nav">
+        <a class="nav-link" href="../../index.html">Beranda</a>
+        <a class="nav-link" href="../ig-feed-4x5/index.html">IG 4:5</a>
+        <a class="nav-link" href="../ig-story-9x16/index.html">Story 9:16</a>
+        <a class="nav-link active" href="../banner-16x9/index.html">Banner 16:9</a>
       </div>
-      <div class="ctrl">
-        <span>Kualitas</span>
-        <select id="ratio">
-          <option value="1">1920 × 1080 (Full HD)</option>
-          <option value="2">3840 × 2160 (4K UHD)</option>
-        </select>
+
+      <div class="tb-actions">
+        <div class="ctrl">
+          <span>Kualitas</span>
+          <select id="ratio">
+            <option value="1">1x (1080p)</option>
+            <option value="2">2x (4K)</option>
+          </select>
+        </div>
       </div>
     </div>
   </nav>
 
   <main class="studio">
-    <div class="grid">
+    <div class="grid landscape">
       <div class="item" data-id="template-banner-16x9">
         <div class="item-bar">
-          <div class="item-meta">
-            <span class="item-tag">STARTER 16:9</span>
-            <span class="item-name">template-banner-16x9.png</span>
-          </div>
+          <span class="item-name">template-banner-16x9.png</span>
           <div class="item-actions">
-            <button class="btn primary" data-dl>⬇ Download PNG</button>
+            <button class="btn" data-copy>Copy</button>
+            <button class="btn primary" data-dl>Download PNG</button>
           </div>
         </div>
 
-        <div class="frame" style="--w:1920px;--h:1080px;--s:.45">
+        <div class="frame">
           <article class="poster" id="template-banner-16x9" data-w="1920" data-h="1080">
             <div class="side-swoosh-l" style="bottom:120px"></div>
             <div class="side-swoosh-r" style="top:160px"></div>

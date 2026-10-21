@@ -1,198 +1,10 @@
-@import url('../../assets/theme.css');
-/* =========================================================
-   HIMSISFO 2026/2027 — Design Tokens (konsep-tema PDF)
-   ========================================================= */
-:root {
-  --cyan: #06B6D4;
-  --cyan-l: #22D3EE;
-  --violet: #A855F7;
-  --violet-l: #C084FC;
-  --mint: #2DD4BF;
-  --mint-l: #5EEAD4;
-  --lime: #A3E635;
-  --navy: #0B1F3A;
-  --navy-2: #16325B;
-  --ice: #F4F9FD;
-  --ink: #0F172A;
-  --sub: #334155;
-  --sub-d: #CBD5E1;
-  --divider: #E2E8F0;
-
-  /* Gradien sesuai referensi + palet HIMSISFO 2026/2027 */
-  --grad-pill: linear-gradient(90deg, #06B6D4 0%, #3B82F6 48%, #A855F7 100%);
-  --grad-chip: linear-gradient(90deg, #0C2348 0%, #2563EB 45%, #A855F7 100%);
-  --grad-ic: linear-gradient(135deg, #22D3EE 0%, #06B6D4 55%, #0284C7 100%);
-  --grad-bi: linear-gradient(90deg, #10B981 0%, #14B8A6 45%, #06B6D4 100%);
-  --grad-num: linear-gradient(135deg, #06B6D4 0%, #2563EB 50%, #7C3AED 100%);
-
-  --f-head: "Plus Jakarta Sans", "Montserrat", system-ui, sans-serif;
-  --f-body: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  --f-script: "Kaushan Script", cursive;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
+@import url("../../templates/shared/studio.css");
 
 /* =========================================================
-   UI STUDIO PREVIEW (Tidak ikut ter-export ke PNG)
+   STYLING KHUSUS PROYEK: KUNJUNGAN EDUKATIF KE BANK INDONESIA
    ========================================================= */
-body {
-  font-family: var(--f-body);
-  background:
-    radial-gradient(900px 500px at 15% -10%, rgba(6, 182, 212, .10), transparent 60%),
-    radial-gradient(900px 500px at 85% 0%, rgba(168, 85, 247, .10), transparent 60%),
-    #F8FAFC;
-  color: var(--ink);
-  min-height: 100vh;
-}
 
-.toolbar {
-  position: sticky; top: 0; z-index: 100;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-  padding: 14px 32px;
-  background: rgba(255, 255, 255, .90);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--divider);
-  box-shadow: 0 4px 20px rgba(15, 23, 42, .04);
-}
-.tb-left { display: flex; align-items: center; gap: 14px; }
-.tb-logo { width: 40px; height: 40px; object-fit: contain; }
-.tb-title h1 { font: 800 16px/1.2 var(--f-head); color: var(--navy); display: flex; align-items: center; gap: 10px; }
-.tb-badge {
-  font: 700 11px/1 var(--f-head);
-  padding: 5px 10px; border-radius: 999px;
-  background: #ECFEFF; color: #0891B2;
-  border: 1px solid #A5F3FC;
-}
-.tb-title p { font-size: 12.5px; color: var(--sub); margin-top: 2px; }
-
-.tb-tabs {
-  display: flex; gap: 6px;
-  background: #F1F5F9;
-  padding: 4px; border-radius: 12px;
-  border: 1px solid var(--divider);
-}
-.tab {
-  font: 700 13px var(--f-head);
-  color: var(--sub); background: transparent; border: 0;
-  padding: 8px 14px; border-radius: 8px; cursor: pointer; transition: .2s;
-}
-.tab:hover { color: var(--navy); }
-.tab.active { background: var(--grad-pill); color: #fff; box-shadow: 0 4px 14px rgba(6, 182, 212, .28); }
-
-.tb-actions { display: flex; align-items: center; gap: 12px; }
-.ctrl {
-  display: flex; align-items: center; gap: 8px;
-  background: #F1F5F9;
-  border: 1px solid var(--divider);
-  padding: 6px 12px; border-radius: 10px;
-  font-size: 12.5px; color: var(--sub);
-}
-.ctrl select {
-  background: transparent; border: 0; color: var(--navy);
-  font: 700 12.5px var(--f-body); outline: none; cursor: pointer;
-}
-.ctrl select option { background: #FFFFFF; color: var(--navy); }
-
-.btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  font: 700 13px var(--f-head);
-  border-radius: 10px; border: 1px solid var(--divider);
-  background: #FFFFFF; color: var(--navy);
-  padding: 9px 14px; cursor: pointer; transition: .2s;
-  text-decoration: none;
-}
-.btn:hover { border-color: var(--cyan); color: #0891B2; transform: translateY(-1px); }
-.btn.primary {
-  background: var(--grad-pill); border: 0; color: #fff;
-  box-shadow: 0 6px 20px rgba(6, 182, 212, .25);
-}
-.btn.primary:hover { color: #fff; box-shadow: 0 8px 25px rgba(168, 85, 247, .38); }
-
-.studio { max-width: 1640px; margin: 0 auto; padding: 28px 32px 64px; }
-.group { margin-bottom: 44px; }
-.group.hidden { display: none; }
-.group-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  margin-bottom: 18px; padding-bottom: 12px;
-  border-bottom: 1px solid var(--divider);
-}
-.group-head h2 { font: 800 20px var(--f-head); color: var(--navy); display: flex; align-items: center; gap: 10px; }
-.group-head h2 span {
-  font: 700 12px var(--f-head); padding: 4px 10px; border-radius: 999px;
-  background: #FAF5FF; color: #7E22CE; border: 1px solid #E9D5FF;
-}
-.group-head p { font-size: 13.5px; color: var(--sub); }
-
-.grid { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
-
-.item {
-  background: #FFFFFF;
-  border: 1px solid var(--divider);
-  border-radius: 18px;
-  padding: 14px;
-  box-shadow: 0 14px 36px rgba(15, 23, 42, .06);
-  transition: border-color .2s;
-}
-.item:hover { border-color: var(--cyan); }
-.item-bar {
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  margin-bottom: 12px; padding: 2px 4px;
-}
-.item-meta { display: flex; align-items: center; gap: 10px; }
-.item-tag {
-  font: 800 11px var(--f-head);
-  padding: 4px 9px; border-radius: 6px;
-  background: #ECFEFF; color: #0891B2; border: 1px solid #A5F3FC;
-}
-.item-name { font: 700 14px var(--f-head); color: var(--navy); }
-.item-actions { display: flex; gap: 8px; }
-.item-actions .btn { padding: 7px 12px; font-size: 12px; border-radius: 8px; }
-
-.frame {
-  --s: .42;
-  width: calc(1080px * var(--s));
-  height: calc(1350px * var(--s));
-  border-radius: 12px; overflow: hidden;
-  background: var(--ice);
-  border: 1px solid var(--divider);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, .08);
-}
-.frame > .poster { transform: scale(var(--s)); transform-origin: top left; }
-
-.toast {
-  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
-  background: #0F172A; border: 1px solid var(--cyan); color: #fff;
-  padding: 12px 20px; border-radius: 12px; font: 600 13.5px var(--f-body);
-  box-shadow: 0 16px 40px rgba(0,0,0,.5);
-  opacity: 0; transition: .25s; pointer-events: none; z-index: 200;
-}
-.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-/* Mode render tunggal (?only=id) untuk screenshot headless */
-body.only { background: #fff; }
-body.only .toolbar, body.only .group-head, body.only .item-bar { display: none !important; }
-body.only .studio, body.only .group, body.only .item { padding: 0 !important; margin: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; }
-body.only .item:not(.target) { display: none !important; }
-body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: none !important; }
-
-/* =========================================================
-   KANVAS POSTER IG 4:5 (1080 × 1350 px)
-   ========================================================= */
-.poster {
-  position: relative;
-  width: 1080px; height: 1350px;
-  overflow: hidden;
-  background:
-    radial-gradient(650px 520px at 82% 24%, rgba(34, 211, 238, .22), transparent 65%),
-    radial-gradient(650px 550px at 12% 72%, rgba(45, 212, 191, .14), transparent 65%),
-    radial-gradient(650px 520px at 88% 82%, rgba(168, 85, 247, .14), transparent 65%),
-    linear-gradient(180deg, #F8FCFF 0%, #EEF6FC 52%, #F5F8FF 100%);
-  color: var(--ink);
-  font-family: var(--f-body);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- Dekorasi ---------- */
+/* ---------- Dekorasi Tambahan ---------- */
 .dots {
   position: absolute; pointer-events: none; z-index: 2;
   background-image: radial-gradient(#67B7D1 2.5px, transparent 2.7px);
@@ -210,52 +22,7 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
 .spark.l { color: var(--lime); }
 .spark.w { color: #FFFFFF; }
 
-.side-swoosh-l {
-  position: absolute; left: -155px; bottom: 160px; width: 320px; height: 290px;
-  background: linear-gradient(135deg, #2DD4BF 0%, #06B6D4 55%, #3B82F6 100%);
-  border-radius: 58% 42% 48% 52% / 50% 58% 42% 50%;
-  transform: rotate(28deg);
-  opacity: .88; z-index: 1; pointer-events: none;
-}
-.side-swoosh-r {
-  position: absolute; right: -165px; top: 470px; width: 340px; height: 260px;
-  background: linear-gradient(135deg, #22D3EE 0%, #3B82F6 50%, #A855F7 100%);
-  border-radius: 52% 48% 60% 40% / 48% 52% 48% 52%;
-  transform: rotate(-28deg);
-  opacity: .88; z-index: 1; pointer-events: none;
-}
-
-/* ---------- Header ---------- */
-.header {
-  position: absolute; top: 34px; left: 52px; right: 52px;
-  display: flex; align-items: center; justify-content: space-between;
-  z-index: 10;
-}
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand .logo-hima { width: 72px; height: 72px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(11,31,58,.08)); }
-.brand .logo-univ {
-  width: 72px; height: 72px; object-fit: contain;
-  mix-blend-mode: multiply;
-  transform: scale(1.16);
-  margin: 0 4px;
-}
-.brand .vr { width: 2px; height: 44px; background: #CBD5E1; margin: 0 2px; }
-.brand-text b { display: block; font: 800 30px/1 var(--f-head); color: var(--navy); letter-spacing: .4px; }
-.brand-text span { display: block; margin-top: 4px; font: 600 13.5px var(--f-body); color: #475569; }
-
-.tagline {
-  position: relative;
-  padding-left: 16px;
-  font: 800 20px/1.16 var(--f-head);
-  letter-spacing: .6px;
-}
-.tagline::before {
-  content: ""; position: absolute; left: 0; top: 2px; bottom: 2px; width: 3.5px;
-  border-radius: 4px; background: linear-gradient(180deg, var(--cyan), var(--violet), var(--mint));
-}
-.tagline .c { color: var(--cyan); display: block; }
-.tagline .r { color: var(--violet); display: block; }
-.tagline .e { color: #14B8A6; display: block; }
+.side-swoosh-r { top: 470px; }
 
 /* ---------- Judul Utama (Miring & Berkarakter seperti Referensi) ---------- */
 .hero-title {
@@ -271,7 +38,6 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   letter-spacing: -1.5px;
   text-shadow: 0 4px 16px rgba(255,255,255,.9);
 }
-/* Splash rays di kiri & kanan HIMSISFO */
 .rays-l, .rays-r {
   position: absolute; top: 50%; display: flex; flex-direction: column; gap: 7px;
   pointer-events: none;
@@ -347,7 +113,6 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   position: absolute; left: -50px; bottom: -28px; width: 420px; height: 220px; z-index: 3;
 }
 
-/* Teks kutipan miring di kanan atas gedung BI */
 .bi-quote {
   position: absolute; z-index: 7;
   font: 400 24px/1.18 var(--f-script);
@@ -366,58 +131,15 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   transform: rotate(-2deg);
 }
 
-/* ---------- Sapaan ---------- */
+/* ---------- Sapaan & Konten Card ---------- */
 .greet { position: absolute; z-index: 6; }
-.greet h3 {
-  font: 800 25px/1.22 var(--f-head);
-  color: var(--navy);
-}
+.greet h3 { font: 800 25px/1.22 var(--f-head); color: var(--navy); }
 .greet h3 .wave { display: inline-block; transform: rotate(8deg); }
-.greet p {
-  margin-top: 8px;
-  font-size: 15.5px; line-height: 1.5;
-  color: var(--ink);
-}
+.greet p { margin-top: 8px; font-size: 15.5px; line-height: 1.5; color: var(--ink); }
 .greet p b { color: var(--navy); font-weight: 800; }
 
-/* ---------- Card & Header Chip ---------- */
-.card {
-  position: absolute; z-index: 6;
-  background: rgba(255, 255, 255, .93);
-  backdrop-filter: blur(10px);
-  border: 1.5px solid #CFE8F3;
-  border-radius: 22px;
-  box-shadow: 0 14px 34px rgba(11, 31, 58, .07);
-}
-.chip {
-  position: absolute; top: -27px; left: -10px;
-  display: inline-flex; align-items: center;
-}
-.chip.center {
-  left: 50%; transform: translateX(-50%);
-}
-.chip .ic {
-  position: relative; z-index: 2;
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--grad-ic);
-  border: 3.5px solid #FFFFFF;
-  display: grid; place-items: center; color: #FFFFFF;
-  box-shadow: 0 8px 18px rgba(6, 182, 212, .35);
-}
-.chip .ic svg { width: 26px; height: 26px; }
-.chip .label {
-  margin-left: -20px;
-  padding: 10px 26px 10px 32px;
-  background: var(--grad-chip);
-  border-radius: 0 999px 999px 0;
-  color: #FFFFFF;
-  font: 800 19.5px/1.1 var(--f-head);
-  white-space: nowrap;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, .24);
-}
 .card p { font-size: 15px; line-height: 1.54; color: var(--ink); }
 
-/* Tabel Informasi Kegiatan */
 .info-row {
   display: grid;
   grid-template-columns: 42px 118px 12px 1fr;
@@ -440,7 +162,6 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
 .info-row .v { font: 500 14.5px/1.35 var(--f-body); color: #1E293B; }
 .info-row .v b { font-weight: 700; color: var(--navy); }
 
-/* Ketentuan Pendaftaran (List Bernomor) */
 .rules { list-style: none; display: flex; flex-direction: column; gap: 9px; }
 .rules li {
   display: grid; grid-template-columns: 34px 1fr;
@@ -456,7 +177,7 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
 }
 .rules p { font-size: 14px; line-height: 1.38; color: var(--ink); }
 
-/* ---------- Brush Banner "Jangan lewatkan kesempatan ini!" ---------- */
+/* ---------- Brush Banner & Note ---------- */
 .brush-wrap {
   position: absolute; z-index: 6;
   display: flex; align-items: center; justify-content: center;
@@ -491,7 +212,7 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
 .closing-note p + p { margin-top: 7px; }
 .closing-note b { color: var(--navy); font-weight: 800; }
 
-/* ---------- Dark CTA Box (Daftar Sekarang + QR Scan Frame) ---------- */
+/* ---------- Dark CTA Box + QR Scan Frame ---------- */
 .cta-box {
   position: absolute; z-index: 7;
   background:
@@ -530,7 +251,6 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   margin: 6px 0; background: rgba(148, 163, 184, .28);
 }
 
-/* Kotak QR dengan siku scan seperti referensi */
 .qr-card {
   flex: none;
   background: #FFFFFF;
@@ -540,10 +260,7 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   color: var(--navy);
   box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
 }
-.qr-frame {
-  position: relative;
-  padding: 6px;
-}
+.qr-frame { position: relative; padding: 6px; }
 .qr-frame img { display: block; width: 82px; height: 82px; }
 .qr-frame .c {
   position: absolute; width: 14px; height: 14px;
@@ -553,22 +270,11 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
 .qr-frame .tr { top: 0; right: 0; border-width: 3px 3px 0 0; border-top-right-radius: 5px; }
 .qr-frame .bl { bottom: 0; left: 0; border-width: 0 0 3px 3px; border-bottom-left-radius: 5px; }
 .qr-frame .br { bottom: 0; right: 0; border-width: 0 3px 3px 0; border-bottom-right-radius: 5px; }
-.qr-card span {
-  margin-top: 4px;
-  font: 800 12px/1 var(--f-head);
-  color: var(--navy);
-}
+.qr-card span { margin-top: 4px; font: 800 12px/1 var(--f-head); color: var(--navy); }
 
 /* ---------- Signature HIMSISFO Kanan Bawah ---------- */
-.sig-wrap {
-  position: absolute; z-index: 6;
-  transform: rotate(-9deg);
-}
-.sig-text {
-  font: 400 46px/1 var(--f-script);
-  color: var(--navy);
-  letter-spacing: 1px;
-}
+.sig-wrap { position: absolute; z-index: 6; transform: rotate(-9deg); }
+.sig-text { font: 400 46px/1 var(--f-script); color: var(--navy); letter-spacing: 1px; }
 .sig-swoosh {
   margin-top: 4px; margin-left: -14px;
   width: 240px; height: 8px;
@@ -576,28 +282,6 @@ body.only .frame { --s: 1 !important; border-radius: 0 !important; box-shadow: n
   background: linear-gradient(90deg, #10B981 0%, #06B6D4 45%, #A855F7 100%);
   transform: rotate(-2deg);
 }
-
-/* ---------- Wave Footer Berlapis ---------- */
-.wave-footer {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 86px; z-index: 8;
-  pointer-events: none;
-}
-.wave-footer svg {
-  position: absolute; left: 0; bottom: 0; width: 100%; height: 86px; display: block;
-}
-.footer-content {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 48px;
-  display: flex; align-items: center; justify-content: center; gap: 16px;
-  color: #E2E8F0; font: 500 14.5px var(--f-body);
-}
-.footer-content::before, .footer-content::after {
-  content: ""; width: 140px; height: 1.5px; border-radius: 2px;
-  background: linear-gradient(90deg, transparent, #38BDF8);
-}
-.footer-content::after { background: linear-gradient(90deg, #A855F7, transparent); }
-.footer-content b { color: #FFFFFF; font: 800 15.5px var(--f-head); letter-spacing: .8px; }
-.footer-content .bar { width: 1.5px; height: 16px; background: rgba(148, 163, 184, .45); }
-.footer-content .dot { color: var(--mint-l); margin: 0 3px; }
 
 /* ---------- Komponen Khusus Carousel ---------- */
 .eyebrow {

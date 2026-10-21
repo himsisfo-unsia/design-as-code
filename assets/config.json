@@ -18,87 +18,14 @@
   },
   "palette": {
     "colors": [
-      {
-        "role": "Primary",
-        "name": "Bright Cyan",
-        "hex": "#06B6D4",
-        "cssVar": "--cyan",
-        "vibe": "Segar, digital, energik",
-        "usage": "Aksen utama, kata CONNECT, dan gradien utama"
-      },
-      {
-        "role": "Secondary",
-        "name": "Electric Violet",
-        "hex": "#A855F7",
-        "cssVar": "--violet",
-        "vibe": "Kreatif, modern, playful tapi tetap rapi",
-        "usage": "Aksen sekunder, kata CREATE, dan gradien utama"
-      },
-      {
-        "role": "Tertiary",
-        "name": "Fresh Mint",
-        "hex": "#2DD4BF",
-        "cssVar": "--mint",
-        "vibe": "Pertumbuhan, optimistis, clean",
-        "usage": "Aksen ketiga, kata EMPOWER, dan badge"
-      },
-      {
-        "role": "Accent",
-        "name": "Lime Pulse",
-        "hex": "#A3E635",
-        "cssVar": "--lime",
-        "vibe": "Sangat fresh, cocok untuk highlight kecil",
-        "usage": "Dot matrix, garis aksen, ikon, atau highlight kecil"
-      },
-      {
-        "role": "Dark Base",
-        "name": "Midnight Navy",
-        "hex": "#0B1F3A",
-        "cssVar": "--navy",
-        "vibe": "Fondasi profesional",
-        "usage": "Judul utama, kartu CTA gelap, dan footer"
-      },
-      {
-        "role": "Light Base",
-        "name": "Ice White",
-        "hex": "#F8FAFC",
-        "cssVar": "--ice",
-        "vibe": "Background bersih",
-        "usage": "Latar belakang utama kanvas terang"
-      },
-      {
-        "role": "Text Dark",
-        "name": "Ink",
-        "hex": "#0F172A",
-        "cssVar": "--ink",
-        "vibe": "Kontras tinggi & mudah dibaca",
-        "usage": "Teks isi utama di latar belakang terang"
-      },
-      {
-        "role": "Text Secondary",
-        "name": "Slate",
-        "hex": "#475569",
-        "cssVar": "--sub",
-        "vibe": "Netral & seimbang",
-        "usage": "Subteks dan keterangan tambahan"
-      }
-    ],
-    "gradients": [
-      {
-        "name": "Hero Cyan–Violet",
-        "css": "linear-gradient(90deg, #06B6D4 0%, #3B82F6 48%, #A855F7 100%)",
-        "cssVar": "--grad-pill"
-      },
-      {
-        "name": "Section Chip Navy–Violet",
-        "css": "linear-gradient(90deg, #0C2348 0%, #2563EB 45%, #A855F7 100%)",
-        "cssVar": "--grad-chip"
-      },
-      {
-        "name": "Fresh Tech Cyan–Mint",
-        "css": "linear-gradient(90deg, #10B981 0%, #14B8A6 45%, #06B6D4 100%)",
-        "cssVar": "--grad-bi"
-      }
+      { "role": "Primary", "name": "Bright Cyan", "hex": "#06B6D4", "cssVar": "--cyan" },
+      { "role": "Secondary", "name": "Electric Violet", "hex": "#A855F7", "cssVar": "--violet" },
+      { "role": "Tertiary", "name": "Fresh Mint", "hex": "#2DD4BF", "cssVar": "--mint" },
+      { "role": "Accent", "name": "Lime Pulse", "hex": "#A3E635", "cssVar": "--lime" },
+      { "role": "Dark Base", "name": "Midnight Navy", "hex": "#0B1F3A", "cssVar": "--navy" },
+      { "role": "Light Base", "name": "Ice White", "hex": "#F8FAFC", "cssVar": "--ice" },
+      { "role": "Text Dark", "name": "Ink", "hex": "#0F172A", "cssVar": "--ink" },
+      { "role": "Text Secondary", "name": "Slate", "hex": "#475569", "cssVar": "--sub" }
     ]
   },
   "templates": [
@@ -107,53 +34,36 @@
       "name": "Instagram Feed (4:5)",
       "dimensions": "1080 × 1350 px",
       "ratio": "4:5",
-      "description": "Template standar untuk post tunggal maupun carousel feed Instagram HIMSISFO.",
       "path": "templates/ig-feed-4x5/index.html"
     },
     {
       "id": "ig-story-9x16",
-      "name": "Instagram Story / Reels (9:16)",
+      "name": "Instagram Story (9:16)",
       "dimensions": "1080 × 1920 px",
       "ratio": "9:16",
-      "description": "Template vertikal penuh untuk pengumuman singkat, reminder acara, dan cover Reels.",
       "path": "templates/ig-story-9x16/index.html"
     },
     {
       "id": "banner-16x9",
-      "name": "Landscape Banner / Slide (16:9)",
+      "name": "Landscape Banner (16:9)",
       "dimensions": "1920 × 1080 px",
       "ratio": "16:9",
-      "description": "Template horizontal untuk spanduk digital, virtual background Zoom, atau cover presentasi.",
       "path": "templates/banner-16x9/index.html"
     }
   ],
   "projects": [
     {
       "id": "kunjungan-edukatif-bi",
-      "title": "Kunjungan Edukatif ke Bank Indonesia (Program BINGO)",
-      "category": "Kunjungan Edukatif",
+      "title": "Kunjungan Edukatif ke Bank Indonesia",
       "eventDate": "05 November 2026",
-      "format": "IG Feed 4:5 (1080 × 1350 px)",
-      "description": "Publikasi pendaftaran kunjungan edukatif mahasiswa Sistem Informasi UNSIA ke Bank Indonesia melalui program BINGO (Bank Indonesia Ngobrol dengan Komunitas).",
+      "format": "IG 4:5 (1080 × 1350)",
       "registrationUrl": "https://forms.gle/MZZMRr3WdcMxSMEDA",
       "studioPath": "projects/kunjungan-edukatif-bi/index.html",
       "exports": [
-        {
-          "label": "Opsi A · Single Post (4:5)",
-          "file": "projects/kunjungan-edukatif-bi/export/poster-single.png"
-        },
-        {
-          "label": "Opsi B · Carousel Slide 1 (Cover)",
-          "file": "projects/kunjungan-edukatif-bi/export/carousel-1.png"
-        },
-        {
-          "label": "Opsi B · Carousel Slide 2 (Info BINGO)",
-          "file": "projects/kunjungan-edukatif-bi/export/carousel-2.png"
-        },
-        {
-          "label": "Opsi B · Carousel Slide 3 (Ketentuan & QR)",
-          "file": "projects/kunjungan-edukatif-bi/export/carousel-3.png"
-        }
+        { "label": "Single Post", "file": "projects/kunjungan-edukatif-bi/export/poster-single.png" },
+        { "label": "Slide 1", "file": "projects/kunjungan-edukatif-bi/export/carousel-1.png" },
+        { "label": "Slide 2", "file": "projects/kunjungan-edukatif-bi/export/carousel-2.png" },
+        { "label": "Slide 3", "file": "projects/kunjungan-edukatif-bi/export/carousel-3.png" }
       ]
     }
   ]

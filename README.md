@@ -31,8 +31,7 @@ design-as-code/
 └── projects/                         # 3. PROYEK DESAIN KEGIATAN HIMSISFO
     └── kunjungan-edukatif-bi/        #    Poster Kunjungan Edukatif ke Bank Indonesia (Program BINGO)
         ├── index.html                #    Studio preview & kanvas HTML (Single Post & Carousel 3 Slide)
-        ├── styles.css                #    Styling proyek (mengimpor ../../assets/theme.css)
-        ├── script.js                 #    Script komponen & export PNG
+        ├── styles.css                #    Styling proyek (mengimpor ../../templates/shared/studio.css)
         ├── render.ps1                #    Script otomatis render PNG via Microsoft Edge Headless
         ├── assets/                   #    Foto gedung BI & QR code pendaftaran (dengan logo HIMSISFO)
         └── export/                   #    Hasil akhir PNG 1080×1350 siap upload ke Instagram

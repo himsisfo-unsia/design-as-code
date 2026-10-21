@@ -3,203 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HIMSISFO UNSIA — Design as Code Showcase Hub</title>
+  <title>HIMSISFO UNSIA — Design as Code</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/theme.css" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--f-body);
-      background:
-        radial-gradient(900px 480px at 12% -5%, rgba(6, 182, 212, .10), transparent 60%),
-        radial-gradient(900px 480px at 88% 0%, rgba(168, 85, 247, .10), transparent 60%),
-        var(--ice);
+      background: var(--ice);
       color: var(--ink);
       min-height: 100vh;
     }
 
-    /* Topbar (Light Mode sesuai Konsep Tema PDF) */
     .navbar {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(255, 255, 255, .88);
+      background: rgba(255, 255, 255, .92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--divider);
       padding: 14px 32px;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, .04);
     }
     .nav-inner {
       max-width: 1320px; margin: 0 auto;
       display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .brand img.hima { width: 46px; height: 46px; object-fit: contain; }
-    .brand img.univ {
-      width: 46px; height: 46px; object-fit: contain;
-      mix-blend-mode: multiply; transform: scale(1.14);
-    }
-    .brand-title h1 { font: 800 18px/1.2 var(--f-head); color: var(--navy); display: flex; align-items: center; gap: 10px; }
-    .period-pill {
-      font: 800 11px/1 var(--f-head);
-      padding: 5px 10px; border-radius: 999px;
-      background: rgba(6, 182, 212, .12); color: #0891B2;
-      border: 1px solid rgba(6, 182, 212, .28);
-    }
-    .brand-title p { font-size: 12.5px; color: var(--sub); margin-top: 2px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img.hima { width: 42px; height: 42px; object-fit: contain; }
+    .brand img.univ { width: 42px; height: 42px; object-fit: contain; mix-blend-mode: multiply; transform: scale(1.14); }
+    .brand h1 { font: 800 18px/1.2 var(--f-head); color: var(--navy); }
 
     .nav-tabs {
       display: flex; gap: 6px;
       background: #F1F5F9;
-      padding: 5px; border-radius: 12px;
+      padding: 4px; border-radius: 10px;
       border: 1px solid var(--divider);
     }
     .nav-tab {
       font: 700 13px var(--f-head);
       color: var(--sub); background: transparent; border: 0;
-      padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: .2s;
+      padding: 7px 14px; border-radius: 7px; cursor: pointer; transition: .2s;
     }
     .nav-tab:hover { color: var(--navy); }
-    .nav-tab.active {
-      background: var(--grad-pill); color: #fff;
-      box-shadow: 0 4px 14px rgba(6, 182, 212, .28);
-    }
+    .nav-tab.active { background: var(--grad-pill); color: #fff; }
 
     .gh-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 9px 16px; border-radius: 10px;
-      background: #FFFFFF;
-      border: 1px solid var(--divider);
+      padding: 8px 14px; border-radius: 10px;
+      background: #FFFFFF; border: 1px solid var(--divider);
       color: var(--navy); font: 700 13px var(--f-head); text-decoration: none;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, .04);
-      transition: .2s;
     }
-    .gh-btn:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-1px); }
+    .gh-btn:hover { border-color: var(--cyan); color: #0891B2; }
 
-    /* Container */
-    .container { max-width: 1320px; margin: 0 auto; padding: 36px 32px 88px; }
+    .container { max-width: 1320px; margin: 0 auto; padding: 32px 32px 72px; }
 
-    /* Hero Banner */
-    .hero {
-      position: relative; overflow: hidden;
-      padding: 36px 40px;
-      border-radius: 24px;
-      background:
-        radial-gradient(600px 300px at 92% 15%, rgba(168, 85, 247, .12), transparent 70%),
-        radial-gradient(500px 300px at 8% 90%, rgba(6, 182, 212, .12), transparent 70%),
-        #FFFFFF;
-      border: 1px solid var(--divider);
-      box-shadow: 0 14px 36px rgba(15, 23, 42, .05);
-      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px;
-      margin-bottom: 36px;
-    }
-    .hero-text { max-width: 680px; }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font: 800 12px var(--f-head); letter-spacing: 1.5px; text-transform: uppercase;
-    }
-    .hero-tag .c { color: var(--cyan); }
-    .hero-tag .r { color: var(--violet); }
-    .hero-tag .e { color: #0D9488; }
-    .hero-text h2 {
-      margin-top: 10px;
-      font: 900 34px/1.15 var(--f-head); color: var(--navy); letter-spacing: -.8px;
-    }
-    .hero-text h2 span {
-      background: var(--grad-pill);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .hero-text p { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--sub); }
-
-    .stats { display: flex; flex-wrap: wrap; gap: 14px; }
-    .stat {
-      min-width: 130px;
-      padding: 16px 20px; border-radius: 16px;
-      background: var(--ice);
-      border: 1px solid var(--divider);
-    }
-    .stat b { display: block; font: 900 26px/1 var(--f-head); color: var(--navy); }
-    .stat span { display: block; margin-top: 6px; font-size: 12px; font-weight: 600; color: var(--sub); }
-
-    /* Sections */
-    .sec { margin-bottom: 48px; }
+    .sec { margin-bottom: 44px; }
     .sec.hidden { display: none; }
-    .sec-head {
-      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px;
-      margin-bottom: 20px; padding-bottom: 12px;
-      border-bottom: 1px solid var(--divider);
+    .sec-title {
+      font: 800 20px var(--f-head); color: var(--navy);
+      margin-bottom: 16px;
     }
-    .sec-head h3 { font: 800 22px var(--f-head); color: var(--navy); display: flex; align-items: center; gap: 10px; }
-    .sec-head h3 code { font: 700 14px "JetBrains Mono", monospace; color: #0891B2; background: #ECFEFF; padding: 3px 8px; border-radius: 6px; }
-    .sec-head p { font-size: 13.5px; color: var(--sub); }
 
     /* Project Card */
     .project-card {
       background: #FFFFFF;
       border: 1px solid var(--divider);
-      border-radius: 22px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 14px 36px rgba(15, 23, 42, .05);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .04);
     }
     .proj-top {
-      display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 20px;
-      margin-bottom: 24px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      margin-bottom: 20px;
     }
-    .proj-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-    .badge {
-      font: 700 11.5px var(--f-head);
-      padding: 5px 11px; border-radius: 999px;
-      background: #ECFEFF; color: #0891B2; border: 1px solid #A5F3FC;
-    }
-    .badge.violet { background: #FAF5FF; color: #7E22CE; border-color: #E9D5FF; }
-    .badge.mint { background: #F0FDFA; color: #0F766E; border-color: #99F6E4; }
-    .proj-info h4 { font: 800 22px var(--f-head); color: var(--navy); }
-    .proj-info p { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--sub); max-width: 760px; }
+    .proj-info h4 { font: 800 20px var(--f-head); color: var(--navy); }
+    .proj-meta { font-size: 13px; color: var(--sub); margin-top: 4px; }
 
-    .proj-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 11px 18px; border-radius: 12px;
-      font: 700 13.5px var(--f-head); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 16px; border-radius: 10px;
+      font: 700 13px var(--f-head); text-decoration: none;
       border: 1px solid var(--divider);
       background: #FFFFFF; color: var(--navy);
       cursor: pointer; transition: .2s;
     }
-    .btn:hover { border-color: var(--cyan); color: #0891B2; transform: translateY(-1px); }
-    .btn.primary {
-      background: var(--grad-pill); border: 0; color: #FFFFFF;
-      box-shadow: 0 8px 22px rgba(6, 182, 212, .25);
-    }
-    .btn.primary:hover { color: #FFFFFF; box-shadow: 0 10px 26px rgba(168, 85, 247, .35); }
+    .btn:hover { border-color: var(--cyan); color: #0891B2; }
+    .btn.primary { background: var(--grad-pill); border: 0; color: #FFFFFF; }
+    .btn.primary:hover { color: #FFFFFF; opacity: .95; }
 
     .exports-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 18px;
+      gap: 16px;
     }
     .exp-item {
       background: var(--ice);
       border: 1px solid var(--divider);
-      border-radius: 16px; overflow: hidden;
+      border-radius: 14px; overflow: hidden;
       transition: .2s;
     }
-    .exp-item:hover { border-color: var(--cyan); transform: translateY(-3px); box-shadow: 0 12px 28px rgba(15, 23, 42, .08); }
+    .exp-item:hover { border-color: var(--cyan); transform: translateY(-2px); }
     .exp-thumb {
-      position: relative; aspect-ratio: 4/5; overflow: hidden;
+      aspect-ratio: 4/5; overflow: hidden;
       background: #E2E8F0; cursor: zoom-in;
       border-bottom: 1px solid var(--divider);
     }
-    .exp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
-    .exp-item:hover .exp-thumb img { transform: scale(1.02); }
+    .exp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .exp-bar {
-      padding: 12px 14px; background: #FFFFFF;
+      padding: 10px 12px; background: #FFFFFF;
       display: flex; align-items: center; justify-content: space-between; gap: 8px;
     }
     .exp-bar span { font: 600 12.5px var(--f-body); color: var(--navy); }
     .exp-dl {
       flex: none; white-space: nowrap;
-      padding: 6px 10px; border-radius: 8px;
+      padding: 5px 10px; border-radius: 7px;
       background: #ECFEFF; color: #0891B2; border: 1px solid #A5F3FC;
       font: 700 11.5px var(--f-head); text-decoration: none;
     }
@@ -207,108 +124,79 @@
 
     /* Templates Grid */
     .tpl-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
     }
     .tpl-card {
       background: #FFFFFF;
       border: 1px solid var(--divider);
-      border-radius: 20px; padding: 24px;
-      display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, .04);
-      transition: .2s;
+      border-radius: 18px; padding: 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
-    .tpl-card:hover { border-color: var(--violet); transform: translateY(-2px); box-shadow: 0 14px 32px rgba(168, 85, 247, .10); }
-    .tpl-preview {
-      height: 170px; border-radius: 14px;
-      background:
-        radial-gradient(240px 120px at 80% 20%, rgba(168, 85, 247, .12), transparent 70%),
-        radial-gradient(240px 120px at 20% 80%, rgba(6, 182, 212, .14), transparent 70%),
-        var(--ice);
-      border: 1.5px dashed #CBD5E1;
-      display: grid; place-items: center;
-    }
-    .ratio-box {
-      border: 2px solid var(--cyan);
-      border-radius: 8px;
-      background: #FFFFFF;
-      box-shadow: 0 6px 16px rgba(6, 182, 212, .15);
-      display: grid; place-items: center;
-      font: 800 13px var(--f-head); color: var(--navy);
-    }
-    .tpl-card h4 { font: 800 18px var(--f-head); color: var(--navy); }
-    .tpl-card p { font-size: 13.5px; line-height: 1.55; color: var(--sub); margin-top: 6px; }
-    .tpl-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 8px; border-top: 1px solid var(--divider); }
-    .tpl-meta code { font: 600 12px "JetBrains Mono", monospace; color: var(--sub); }
+    .tpl-card h4 { font: 800 16px var(--f-head); color: var(--navy); }
+    .tpl-card code { display: block; margin-top: 4px; font: 600 12px "JetBrains Mono", monospace; color: var(--sub); }
 
     /* Brand Assets & Palette */
     .asset-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;
-      margin-bottom: 28px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;
+      margin-bottom: 20px;
     }
     .asset-box {
       background: #FFFFFF;
       border: 1px solid var(--divider);
-      border-radius: 18px; padding: 20px;
-      display: flex; align-items: center; gap: 16px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, .03);
+      border-radius: 16px; padding: 14px 16px;
+      display: flex; align-items: center; gap: 14px;
     }
-    .asset-Stage {
-      width: 78px; height: 78px; border-radius: 14px;
+    .asset-stage {
+      width: 56px; height: 56px; border-radius: 12px;
       background: var(--ice); border: 1px solid var(--divider);
-      display: grid; place-items: center; padding: 10px; flex: none;
+      display: grid; place-items: center; padding: 8px; flex: none;
     }
-    .asset-Stage img { width: 100%; height: 100%; object-fit: contain; }
-    .asset-info { flex: 1; min-width: 0; }
-    .asset-info b { display: block; font: 800 15px var(--f-head); color: var(--navy); }
-    .asset-info code { display: block; margin-top: 3px; font: 12px "JetBrains Mono", monospace; color: var(--sub); }
+    .asset-stage img { width: 100%; height: 100%; object-fit: contain; }
+    .asset-info b { display: block; font: 700 14px var(--f-head); color: var(--navy); }
     .asset-info a {
-      display: inline-block; margin-top: 10px;
-      font: 700 12.5px var(--f-head); color: #0891B2; text-decoration: none;
+      display: inline-block; margin-top: 4px;
+      font: 700 12px var(--f-head); color: #0891B2; text-decoration: none;
     }
-    .asset-info a:hover { color: var(--violet); }
 
     .palette-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px;
     }
     .swatch-card {
       background: #FFFFFF;
       border: 1px solid var(--divider);
-      border-radius: 16px; padding: 14px;
+      border-radius: 14px; padding: 10px;
       cursor: pointer; transition: .2s;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, .03);
     }
-    .swatch-card:hover { border-color: var(--cyan); transform: translateY(-2px); box-shadow: 0 12px 24px rgba(6, 182, 212, .10); }
+    .swatch-card:hover { border-color: var(--cyan); transform: translateY(-2px); }
     .swatch-color {
-      height: 68px; border-radius: 10px; margin-bottom: 12px;
+      height: 52px; border-radius: 8px; margin-bottom: 8px;
       border: 1px solid rgba(15, 23, 42, .08);
       display: flex; align-items: flex-end; justify-content: space-between;
-      padding: 8px 10px;
+      padding: 6px 8px;
       font: 700 11px "JetBrains Mono", monospace;
     }
-    .swatch-card b { display: block; font: 800 14.5px var(--f-head); color: var(--navy); }
-    .swatch-card .role { font: 700 11px var(--f-head); color: #0891B2; text-transform: uppercase; letter-spacing: .8px; }
-    .swatch-card p { margin-top: 5px; font-size: 12px; line-height: 1.45; color: var(--sub); }
+    .swatch-card b { display: block; font: 700 13.5px var(--f-head); color: var(--navy); }
+    .swatch-card span.role { font: 600 11px var(--f-body); color: var(--sub); }
 
     /* Lightbox Modal */
     .lightbox {
       position: fixed; inset: 0; z-index: 200;
-      background: rgba(15, 23, 42, .82);
+      background: rgba(15, 23, 42, .85);
       backdrop-filter: blur(8px);
       display: none; place-items: center; padding: 24px;
     }
     .lightbox.open { display: grid; }
     .lightbox img {
       max-width: min(92vw, 760px);
-      max-height: 88vh;
+      max-height: 90vh;
       border-radius: 14px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, .45);
     }
 
     .toast {
-      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
       background: var(--navy); color: #fff;
-      padding: 12px 20px; border-radius: 12px; font: 600 13.5px var(--f-body);
-      box-shadow: 0 14px 32px rgba(11, 31, 58, .25);
+      padding: 10px 18px; border-radius: 10px; font: 600 13px var(--f-body);
       opacity: 0; transition: .25s; pointer-events: none; z-index: 250;
     }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -316,101 +204,66 @@
 </head>
 <body>
 
-  <!-- ================= NAVBAR ================= -->
   <header class="navbar">
     <div class="nav-inner">
       <div class="brand">
         <img class="hima" src="assets/logo-himsisfo.png" alt="Logo HIMSISFO" />
         <img class="univ" src="assets/logo-universitas.jpg" alt="Logo UNSIA" />
-        <div class="brand-title">
-          <h1>HIMSISFO UNSIA <span class="period-pill">2026/2027</span></h1>
-          <p>Design-as-Code Repository · Menghubungkan · Berkarya · Memberdayakan</p>
-        </div>
+        <h1>HIMSISFO UNSIA</h1>
       </div>
 
       <div class="nav-tabs">
         <button class="nav-tab active" data-tab="all">Semua</button>
-        <button class="nav-tab" data-tab="projects">🚀 Projects</button>
-        <button class="nav-tab" data-tab="templates">📐 Templates</button>
-        <button class="nav-tab" data-tab="assets">🎨 Assets &amp; Palette</button>
+        <button class="nav-tab" data-tab="projects">Projects</button>
+        <button class="nav-tab" data-tab="templates">Templates</button>
+        <button class="nav-tab" data-tab="assets">Assets</button>
       </div>
 
-      <a class="gh-btn" href="https://github.com/himsisfo-unsia/design-as-code" target="_blank" rel="noopener">
-        GitHub Repo ↗
-      </a>
+      <a class="gh-btn" href="https://github.com/himsisfo-unsia/design-as-code" target="_blank" rel="noopener">GitHub</a>
     </div>
   </header>
 
   <main class="container">
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-      <div class="hero-text">
-        <div class="hero-tag">
-          <span class="c">CONNECT</span> · <span class="r">CREATE</span> · <span class="e">EMPOWER</span>
-        </div>
-        <h2>Pusat Desain &amp; Aset Visual <span>Berbasis Kode</span></h2>
-        <p>Seluruh poster kegiatan, feed Instagram, base template, serta aset identitas visual Himpunan Mahasiswa Sistem Informasi Universitas Siber Asia dikelola secara terstruktur di repositori ini.</p>
-      </div>
-      <div class="stats" id="hero-stats"></div>
-    </section>
-
-    <!-- ================= 1. PROJECTS SHOWCASE ================= -->
     <section class="sec" data-sec="projects">
-      <div class="sec-head">
-        <h3>🚀 Projects Showcase <code>projects/</code></h3>
-        <p>Klik gambar untuk memperbesar, atau buka Studio untuk mengedit teks dan mengunduh PNG.</p>
-      </div>
+      <h3 class="sec-title">Projects</h3>
       <div id="projects-list"></div>
     </section>
 
-    <!-- ================= 2. BASE TEMPLATES ================= -->
     <section class="sec" data-sec="templates">
-      <div class="sec-head">
-        <h3>📐 Base Templates <code>templates/</code></h3>
-        <p>Starter template siap pakai dengan header, wave footer, dan token warna resmi HIMSISFO 2026/2027.</p>
-      </div>
+      <h3 class="sec-title">Templates</h3>
       <div class="tpl-grid" id="templates-list"></div>
     </section>
 
-    <!-- ================= 3. BRAND ASSETS & PALETTE ================= -->
     <section class="sec" data-sec="assets">
-      <div class="sec-head">
-        <h3>🎨 Brand Assets &amp; Color Palette <code>assets/</code></h3>
-        <p>Klik kartu warna untuk menyalin kode Hex. Konfigurasi terpusat tersimpan di <code>assets/config.json</code> dan <code>assets/theme.css</code>.</p>
-      </div>
-
+      <h3 class="sec-title">Brand Assets &amp; Palette</h3>
       <div class="asset-grid">
         <div class="asset-box">
-          <div class="asset-Stage"><img src="assets/logo-himsisfo.png" alt="Logo HIMSISFO" /></div>
+          <div class="asset-stage"><img src="assets/logo-himsisfo.png" alt="Logo HIMSISFO" /></div>
           <div class="asset-info">
-            <b>Logo HIMSISFO UNSIA</b>
-            <code>assets/logo-himsisfo.png</code>
-            <a href="assets/logo-himsisfo.png" download>⬇ Unduh PNG</a>
+            <b>Logo HIMSISFO</b>
+            <a href="assets/logo-himsisfo.png" download>Download</a>
           </div>
         </div>
         <div class="asset-box">
-          <div class="asset-Stage"><img src="assets/logo-universitas.jpg" alt="Logo UNSIA" /></div>
+          <div class="asset-stage"><img src="assets/logo-universitas.jpg" alt="Logo UNSIA" /></div>
           <div class="asset-info">
-            <b>Logo Universitas Siber Asia</b>
-            <code>assets/logo-universitas.jpg</code>
-            <a href="assets/logo-universitas.jpg" download>⬇ Unduh JPG</a>
+            <b>Logo UNSIA</b>
+            <a href="assets/logo-universitas.jpg" download>Download</a>
           </div>
         </div>
         <div class="asset-box">
-          <div class="asset-Stage" style="background:#0B1F3A;color:#22D3EE;font:900 22px var(--f-head)">PDF</div>
+          <div class="asset-stage" style="background:#0B1F3A;color:#22D3EE;font:900 18px var(--f-head)">PDF</div>
           <div class="asset-info">
-            <b>Konsep Tema 2026/2027</b>
-            <code>assets/konsep-tema-hima-2026-2027.pdf</code>
-            <a href="assets/konsep-tema-hima-2026-2027.pdf" target="_blank">📄 Buka Panduan PDF →</a>
+            <b>Konsep Tema</b>
+            <a href="assets/konsep-tema-hima-2026-2027.pdf" target="_blank">Buka PDF</a>
           </div>
         </div>
         <div class="asset-box">
-          <div class="asset-Stage" style="background:#FAF5FF;color:#9333EA;font:800 20px 'JetBrains Mono',monospace">{ }</div>
+          <div class="asset-stage" style="background:#FAF5FF;color:#9333EA;font:800 18px 'JetBrains Mono',monospace">{ }</div>
           <div class="asset-info">
-            <b>Brand Config &amp; Registry</b>
-            <code>assets/config.json · assets/theme.css</code>
-            <a href="assets/config.json" target="_blank">⚙️ Lihat config.json →</a>
+            <b>config.json</b>
+            <a href="assets/config.json" target="_blank">Lihat JSON</a>
           </div>
         </div>
       </div>
@@ -420,7 +273,6 @@
 
   </main>
 
-  <!-- Lightbox Preview -->
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="" alt="Preview Poster" />
   </div>
@@ -431,35 +283,33 @@
     const FALLBACK_CONFIG = {
       palette: {
         colors: [
-          { role: "Primary", name: "Bright Cyan", hex: "#06B6D4", cssVar: "--cyan", usage: "Aksen utama, kata CONNECT, dan gradien utama" },
-          { role: "Secondary", name: "Electric Violet", hex: "#A855F7", cssVar: "--violet", usage: "Aksen sekunder, kata CREATE, dan gradien utama" },
-          { role: "Tertiary", name: "Fresh Mint", hex: "#2DD4BF", cssVar: "--mint", usage: "Aksen ketiga, kata EMPOWER, dan badge" },
-          { role: "Accent", name: "Lime Pulse", hex: "#A3E635", cssVar: "--lime", usage: "Dot matrix, garis aksen, atau highlight kecil" },
-          { role: "Dark Base", name: "Midnight Navy", hex: "#0B1F3A", cssVar: "--navy", usage: "Judul utama, kartu CTA gelap, dan footer" },
-          { role: "Light Base", name: "Ice White", hex: "#F8FAFC", cssVar: "--ice", usage: "Latar belakang utama kanvas terang" },
-          { role: "Text Dark", name: "Ink", hex: "#0F172A", cssVar: "--ink", usage: "Teks isi utama di latar belakang terang" },
-          { role: "Text Secondary", name: "Slate", hex: "#475569", cssVar: "--sub", usage: "Subteks dan keterangan tambahan" }
+          { role: "Primary", name: "Bright Cyan", hex: "#06B6D4", cssVar: "--cyan" },
+          { role: "Secondary", name: "Electric Violet", hex: "#A855F7", cssVar: "--violet" },
+          { role: "Tertiary", name: "Fresh Mint", hex: "#2DD4BF", cssVar: "--mint" },
+          { role: "Accent", name: "Lime Pulse", hex: "#A3E635", cssVar: "--lime" },
+          { role: "Dark Base", name: "Midnight Navy", hex: "#0B1F3A", cssVar: "--navy" },
+          { role: "Light Base", name: "Ice White", hex: "#F8FAFC", cssVar: "--ice" },
+          { role: "Text Dark", name: "Ink", hex: "#0F172A", cssVar: "--ink" },
+          { role: "Text Secondary", name: "Slate", hex: "#475569", cssVar: "--sub" }
         ]
       },
       templates: [
-        { id: "ig-feed-4x5", name: "Instagram Feed (4:5)", dimensions: "1080 × 1350 px", ratio: "4:5", description: "Template standar untuk post tunggal maupun carousel feed Instagram HIMSISFO.", path: "templates/ig-feed-4x5/index.html" },
-        { id: "ig-story-9x16", name: "Instagram Story / Reels (9:16)", dimensions: "1080 × 1920 px", ratio: "9:16", description: "Template vertikal penuh untuk pengumuman singkat, reminder acara, dan cover Reels.", path: "templates/ig-story-9x16/index.html" },
-        { id: "banner-16x9", name: "Landscape Banner / Slide (16:9)", dimensions: "1920 × 1080 px", ratio: "16:9", description: "Template horizontal untuk spanduk digital, virtual background Zoom, atau cover presentasi.", path: "templates/banner-16x9/index.html" }
+        { id: "ig-feed-4x5", name: "Instagram Feed (4:5)", dimensions: "1080 × 1350 px", path: "templates/ig-feed-4x5/index.html" },
+        { id: "ig-story-9x16", name: "Instagram Story (9:16)", dimensions: "1080 × 1920 px", path: "templates/ig-story-9x16/index.html" },
+        { id: "banner-16x9", name: "Landscape Banner (16:9)", dimensions: "1920 × 1080 px", path: "templates/banner-16x9/index.html" }
       ],
       projects: [
         {
           id: "kunjungan-edukatif-bi",
-          title: "Kunjungan Edukatif ke Bank Indonesia (Program BINGO)",
-          category: "Kunjungan Edukatif",
+          title: "Kunjungan Edukatif ke Bank Indonesia",
           eventDate: "05 November 2026",
-          format: "IG Feed 4:5 (1080 × 1350 px)",
-          description: "Publikasi pendaftaran kunjungan edukatif mahasiswa Sistem Informasi UNSIA ke Bank Indonesia melalui program BINGO (Bank Indonesia Ngobrol dengan Komunitas).",
+          format: "IG 4:5 (1080 × 1350)",
           studioPath: "projects/kunjungan-edukatif-bi/index.html",
           exports: [
-            { label: "Opsi A · Single Post (4:5)", file: "projects/kunjungan-edukatif-bi/export/poster-single.png" },
-            { label: "Opsi B · Carousel Slide 1 (Cover)", file: "projects/kunjungan-edukatif-bi/export/carousel-1.png" },
-            { label: "Opsi B · Carousel Slide 2 (Info BINGO)", file: "projects/kunjungan-edukatif-bi/export/carousel-2.png" },
-            { label: "Opsi B · Carousel Slide 3 (Ketentuan & QR)", file: "projects/kunjungan-edukatif-bi/export/carousel-3.png" }
+            { label: "Single Post", file: "projects/kunjungan-edukatif-bi/export/poster-single.png" },
+            { label: "Slide 1", file: "projects/kunjungan-edukatif-bi/export/carousel-1.png" },
+            { label: "Slide 2", file: "projects/kunjungan-edukatif-bi/export/carousel-2.png" },
+            { label: "Slide 3", file: "projects/kunjungan-edukatif-bi/export/carousel-3.png" }
           ]
         }
       ]
@@ -470,7 +320,7 @@
       t.textContent = msg;
       t.classList.add('show');
       clearTimeout(t._h);
-      t._h = setTimeout(() => t.classList.remove('show'), 2400);
+      t._h = setTimeout(() => t.classList.remove('show'), 2200);
     };
 
     async function loadConfig() {
@@ -484,29 +334,14 @@
     }
 
     function renderHub(cfg) {
-      const totalSlides = cfg.projects.reduce((n, p) => n + (p.exports?.length || 0), 0);
-      document.getElementById('hero-stats').innerHTML = `
-        <div class="stat"><b>${cfg.projects.length}</b><span>Proyek Desain</span></div>
-        <div class="stat"><b>${totalSlides}</b><span>PNG Siap Upload</span></div>
-        <div class="stat"><b>${cfg.templates.length}</b><span>Base Templates</span></div>
-        <div class="stat"><b>${cfg.palette.colors.length}</b><span>Token Warna</span></div>
-      `;
-
       document.getElementById('projects-list').innerHTML = cfg.projects.map((p) => `
         <article class="project-card">
           <div class="proj-top">
             <div class="proj-info">
-              <div class="proj-badges">
-                <span class="badge">${p.category}</span>
-                <span class="badge violet">📅 ${p.eventDate}</span>
-                <span class="badge mint">📐 ${p.format}</span>
-              </div>
               <h4>${p.title}</h4>
-              <p>${p.description}</p>
+              <div class="proj-meta">${p.eventDate} · ${p.format}</div>
             </div>
-            <div class="proj-actions">
-              <a class="btn primary" href="${p.studioPath}">🎨 Buka Studio &amp; Export →</a>
-            </div>
+            <a class="btn primary" href="${p.studioPath}">Buka Studio</a>
           </div>
           <div class="exports-grid">
             ${p.exports.map((e) => `
@@ -516,7 +351,7 @@
                 </div>
                 <div class="exp-bar">
                   <span>${e.label}</span>
-                  <a class="exp-dl" href="${e.file}" download>⬇ PNG</a>
+                  <a class="exp-dl" href="${e.file}" download>Download PNG</a>
                 </div>
               </div>
             `).join('')}
@@ -524,25 +359,15 @@
         </article>
       `).join('');
 
-      const dimsMap = { '4:5': [86, 108], '9:16': [66, 118], '16:9': [136, 76] };
-      document.getElementById('templates-list').innerHTML = cfg.templates.map((t) => {
-        const [w, h] = dimsMap[t.ratio] || [90, 90];
-        return `
-          <div class="tpl-card">
-            <div>
-              <div class="tpl-preview">
-                <div class="ratio-box" style="width:${w}px;height:${h}px">${t.ratio}</div>
-              </div>
-              <h4 style="margin-top:16px">${t.name}</h4>
-              <p>${t.description}</p>
-            </div>
-            <div class="tpl-meta">
-              <code>${t.dimensions}</code>
-              <a class="btn" href="${t.path}" style="padding:8px 14px;font-size:12.5px">Buka Template →</a>
-            </div>
+      document.getElementById('templates-list').innerHTML = cfg.templates.map((t) => `
+        <div class="tpl-card">
+          <div>
+            <h4>${t.name}</h4>
+            <code>${t.dimensions}</code>
           </div>
-        `;
-      }).join('');
+          <a class="btn" href="${t.path}">Buka</a>
+        </div>
+      `).join('');
 
       document.getElementById('palette-list').innerHTML = cfg.palette.colors.map((c) => {
         const isLight = c.hex.toUpperCase() === '#F8FAFC' || c.hex.toUpperCase() === '#A3E635';
@@ -553,9 +378,8 @@
               <span>${c.hex}</span>
               <span>${c.cssVar}</span>
             </div>
-            <span class="role">${c.role}</span>
             <b>${c.name}</b>
-            <p>${c.usage}</p>
+            <span class="role">${c.role}</span>
           </div>
         `;
       }).join('');
@@ -573,7 +397,7 @@
       document.querySelectorAll('[data-hex]').forEach((el) => {
         el.addEventListener('click', () => {
           navigator.clipboard?.writeText(el.dataset.hex);
-          toast(`✔ Kode warna ${el.dataset.hex} disalin!`);
+          toast(`✔ ${el.dataset.hex} disalin`);
         });
       });
     }
